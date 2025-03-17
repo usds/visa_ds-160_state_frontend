@@ -1,7 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules/
+jspm_packages/
+web_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -14,11 +16,16 @@
 /coverage
 
 # next.js
-/.next/
-/out/
+.next
+out
+.nuxt
+dist
 
 # production
 /build
+
+# Pages output
+_site
 
 # misc
 .DS_Store

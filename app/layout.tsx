@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Link from "next/link";
-import Image from "next/image";
 
 import "./globals.css";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
-import {
-  GovBanner,
-} from "@trussworks/react-uswds";
+import { GovBanner } from "@trussworks/react-uswds";
 
 import AppHeaderSimple from "../components/AppHeaderSimple";
-// import AppFooter from "../components/AppFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,10 +26,8 @@ export default function RootLayout({
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <GovBanner />
         <AppHeaderSimple />
-        <main className="flex-grow">
-          {children}
-        </main>
-        </body>
-      </html>
+        <main className="flex-grow">{children}</main>
+      </body>
+    </html>
   );
 }

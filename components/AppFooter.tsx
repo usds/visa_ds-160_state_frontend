@@ -1,7 +1,7 @@
-import { Address, Footer, FooterNav, Logo } from '@trussworks/react-uswds';
-import Link from 'next/link';
+import { Address, Footer, FooterNav, Logo } from "@trussworks/react-uswds";
+import Image from "next/image";
 
-import React from 'react';
+import React from "react";
 
 function AppFooter() {
   const returnToTop = "";
@@ -16,16 +16,16 @@ function AppFooter() {
             <FooterNav
               size="slim"
               links={[
-                <a className="usa-footer__primary-link" href="#">
+                <a key="link1" className="usa-footer__primary-link" href="#">
                   Link 1
                 </a>,
-                <a className="usa-footer__primary-link" href="#">
+                <a key="link2" className="usa-footer__primary-link" href="#">
                   Link 2
                 </a>,
-                <a className="usa-footer__primary-link" href="#">
+                <a key="link3" className="usa-footer__primary-link" href="#">
                   Link 3
                 </a>,
-                <a className="usa-footer__primary-link" href="#">
+                <a key="link4" className="usa-footer__primary-link" href="#">
                   Link 4
                 </a>,
               ]}
@@ -50,17 +50,19 @@ function AppFooter() {
         <Logo
           size="slim"
           image={
-            <img
+            <Image
               className="usa-footer__logo-img"
               alt="img alt text"
               src={logoImg}
             />
           }
-          heading={<p className="usa-footer__logo-heading">U.S. Department of State</p>}
+          heading={
+            <p className="usa-footer__logo-heading">U.S. Department of State</p>
+          }
         />
       }
     />
-  )
+  );
 }
 
-export default AppFooter
+export default AppFooter;

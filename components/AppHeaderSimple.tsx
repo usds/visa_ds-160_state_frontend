@@ -2,19 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Button,
   Header,
-  Icon,
-  Logo,
   NavMenuButton,
   PrimaryNav,
   Title,
 } from "@trussworks/react-uswds";
-
-interface HeaderProps {
-  projectLogo: string;
-  projectName: string;
-}
 
 function AppHeaderSimple() {
   const projectName = "DS-160 Nonimmigrant Visa Application";
@@ -26,26 +18,31 @@ function AppHeaderSimple() {
     </Link>,
     <Link href="/search" key="two" className="usa-nav__link">
       <span className="text-white">Search</span>
-    </Link>
-];
+    </Link>,
+  ];
 
   return (
-      <Header
-        className="usa-header usa-header--basic bg-primary-darker min-h-16"
-        basic={true}
-      >
-        <div className="usa-nav-container bg-primary-darker">
-          <div className="usa-navbar grid-row text-white">
-            <div className="usa-logo flex-1 grid-col">
-              <Image src={projectLogo} alt="Project Logo" height={60} width={60} />
-            </div>
-            <div style={{paddingLeft: '1rem'}}></div>
-            <Title className="flex-2 grid-col">{projectName}</Title>
-            <NavMenuButton label="Menu" />
+    <Header
+      className="usa-header usa-header--basic bg-primary-darker min-h-16"
+      basic={true}
+    >
+      <div className="usa-nav-container bg-primary-darker">
+        <div className="usa-navbar grid-row text-white">
+          <div className="usa-logo flex-1 grid-col">
+            <Image
+              src={projectLogo}
+              alt="Project Logo"
+              height={60}
+              width={60}
+            />
           </div>
-          <PrimaryNav items={testItemsMenu}></PrimaryNav>
+          <div style={{ paddingLeft: "1rem" }}></div>
+          <Title className="flex-2 grid-col">{projectName}</Title>
+          <NavMenuButton label="Menu" />
         </div>
-      </Header>
+        <PrimaryNav items={testItemsMenu}></PrimaryNav>
+      </div>
+    </Header>
   );
 }
 

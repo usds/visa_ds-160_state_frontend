@@ -1,5 +1,5 @@
-@import '@trussworks/react-uswds/lib/uswds.css';
-@import '@trussworks/react-uswds/lib/index.css';
+@import "@trussworks/react-uswds/lib/uswds.css";
+@import "@trussworks/react-uswds/lib/index.css";
 
 :root {
   --background: #ffffff;
@@ -12,25 +12,26 @@
     --foreground: #ffffff;
   }
 }
-html, body {
-    height: 100%;
-    margin: 0px; /* Remove default margin */
-    padding: 5; /* Remove default padding */
+html,
+body {
+  height: 100%;
+  margin: 0px; /* Remove default margin */
+  padding: 5; /* Remove default padding */
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    color: var(--foreground);
-    background-color: var(--background);
-    font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: sans-serif;
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6rem;
-    min-height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
