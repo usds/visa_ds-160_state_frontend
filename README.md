@@ -7,6 +7,8 @@ Run one-time install of modules:
 npm install
 ```
 
+Update basePath in `next.config.ts`. Sample configuration is the format that would be used for relative links within a Cloud.gov Pages site.
+
 Run the development server:
 
 ```bash
