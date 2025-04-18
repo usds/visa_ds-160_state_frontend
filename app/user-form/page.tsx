@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "../globals.css";
-import UserForm from "../../components/UserForm";
+import UserForm from "../../components/UserForm/UserForm";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 

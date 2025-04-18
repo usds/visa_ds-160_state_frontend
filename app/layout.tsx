@@ -7,7 +7,7 @@ import "@trussworks/react-uswds/lib/index.css";
 
 import { GovBanner } from "@trussworks/react-uswds";
 
-import AppHeaderSimple from "../components/AppHeaderSimple";
+import AppHeaderSimple from "../components/UI/AppHeaderSimple";
 
 const inter = Inter({ subsets: ["latin"] });
 
