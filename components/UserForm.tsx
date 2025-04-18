@@ -1,11 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import { Alert, Button, Form, Label, TextInput } from "@trussworks/react-uswds";
 
-const UserForm = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+type UserFormInputProps = {
+  firstName: string;
+  setFirstName: (event: string) => void;
+  lastName: string;
+  setLastName: (event: string) => void;
+  errorMessage: string;
+  setErrorMessage: (event: string) => void;
+  successMessage: string;
+  setSuccessMessage: (event: string) => void;
+};
+const UserForm = (props: UserFormInputProps) => {
+  const {
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName,
+    errorMessage,
+    setErrorMessage,
+    successMessage,
+    setSuccessMessage,
+  } = props;
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -65,9 +81,7 @@ const UserForm = () => {
         id="first-name"
         name="first-name"
         value={firstName}
-        onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
-          setFirstName(e.target.value)
-        }
+        onChange={(e) => setFirstName(e.target.value)}
         required
       />
       <Label htmlFor="last-name">Last Name</Label>
@@ -75,9 +89,7 @@ const UserForm = () => {
         id="last-name"
         name="last-name"
         value={lastName}
-        onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
-          setLastName(e.target.value)
-        }
+        onChange={(e) => setLastName(e.target.value)}
         required
       />
       <Button type="submit">Submit</Button>

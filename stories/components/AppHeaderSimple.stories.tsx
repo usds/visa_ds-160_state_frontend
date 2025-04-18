@@ -10,7 +10,7 @@ const meta: Meta<typeof AppHeaderSimple> = {
 export default meta;
 type Story = StoryObj<typeof AppHeaderSimple>;
 
-export const FirstStory: Story = {
+export const JustOurLilHeader: Story = {
   args: {
     //👇 The args you need here will depend on your component
   },
