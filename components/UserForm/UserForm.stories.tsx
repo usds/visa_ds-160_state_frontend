@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import UserForm from "./UserForm";
-import { withReactHookForm } from "../../.storybook/decorators";
+import { useReactHookForm } from "../../.storybook/decorators";
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof UserForm> = {
   title: "Components/UserForm",
   component: UserForm,
-  decorators: [withReactHookForm],
+  decorators: [useReactHookForm],
 };
 
 export default meta;
