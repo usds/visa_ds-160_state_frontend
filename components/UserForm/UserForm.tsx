@@ -1,63 +1,30 @@
 import React from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import {
+  FieldErrors,
+  RegisterOptions,
+  SubmitHandler,
+  UseFormHandleSubmit,
+} from "react-hook-form";
 import { Alert, Button, Form, Label, TextInput } from "@trussworks/react-uswds";
 
-type UserFormInput = {
+export type UserFormInput = {
   firstName: string;
   lastName: string;
 };
 
 type UserFormProps = {
   successMessage: string;
-  setSuccessMessage: (event: string) => void;
+  register: (
+    name: string,
+    options?: RegisterOptions,
+  ) => { ref; name; onChange; onBlur };
+  handleSubmit: UseFormHandleSubmit<UserFormInput, UserFormInput>;
+  onSubmit: SubmitHandler<UserFormInput>;
+  errors: FieldErrors<UserFormInput>;
 };
 
 const UserForm = (props: UserFormProps) => {
-  const { successMessage, setSuccessMessage } = props;
-  const {
-    register,
-    handleSubmit,
-    setError,
-    clearErrors,
-    formState: { errors },
-  } = useForm<UserFormInput>();
-
-  const onSubmit: SubmitHandler<UserFormInput> = async (userData) => {
-    try {
-      const response = await fetch("http://localhost:8000/api/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
-
-      if (response.ok) {
-        // Handle success
-        setSuccessMessage("Form submitted successfully!");
-        clearErrors(); // Clear any previous errors
-        console.log("User added successfully!");
-      } else {
-        // Handle error
-        const errorData = await response.json();
-        setError("root.serverError", {
-          type: response.statusText,
-          message:
-            "There was a server error submitting the form. Please try again.",
-        });
-        setSuccessMessage(null); // Clear any previous success messages
-        console.error("Error adding user.", errorData);
-      }
-    } catch (error) {
-      setError("root.unknownError", {
-        type: "unknown",
-        message:
-          "There was an unknown error submitting the form. Please try again.",
-      });
-      setSuccessMessage(null); // Clear any previous success messages
-      console.error("Error adding user.", error);
-    }
-  };
+  const { successMessage, register, handleSubmit, onSubmit, errors } = props;
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
