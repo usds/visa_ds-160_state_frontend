@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
 import "../globals.css";
 import UserForm, { UserFormInput } from "../../components/UserForm/UserForm";
 import "@trussworks/react-uswds/lib/uswds.css";
@@ -8,13 +8,7 @@ import "@trussworks/react-uswds/lib/index.css";
 
 export default function UserFormPage() {
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const {
-    register,
-    handleSubmit,
-    setError,
-    clearErrors,
-    formState: { errors },
-  } = useForm<UserFormInput>();
+  const formMethods = useForm<UserFormInput>();
 
   const onSubmit: SubmitHandler<UserFormInput> = async (userData) => {
     try {
@@ -29,12 +23,12 @@ export default function UserFormPage() {
       if (response.ok) {
         // Handle success
         setSuccessMessage("Form submitted successfully!");
-        clearErrors(); // Clear any previous errors
+        formMethods.clearErrors(); // Clear any previous errors
         console.log("User added successfully!");
       } else {
         // Handle error
         const errorData = await response.json();
-        setError("root.serverError", {
+        formMethods.setError("root.serverError", {
           type: response.statusText,
           message:
             "There was a server error submitting the form. Please try again.",
@@ -43,7 +37,7 @@ export default function UserFormPage() {
         console.error("Error adding user.", errorData);
       }
     } catch (error) {
-      setError("root.unknownError", {
+      formMethods.setError("root.unknownError", {
         type: "unknown",
         message:
           "There was an unknown error submitting the form. Please try again.",
@@ -55,10 +49,7 @@ export default function UserFormPage() {
 
   const userFormProps = {
     successMessage,
-    register,
-    handleSubmit,
     onSubmit,
-    errors,
   };
 
   return (
@@ -82,7 +73,9 @@ export default function UserFormPage() {
         }}
       >
         <h1 style={{ marginBottom: "20px" }}>User Registration</h1>
-        <UserForm {...userFormProps} />
+        <FormProvider {...formMethods}>
+          <UserForm {...userFormProps} />
+        </FormProvider>
       </div>
     </div>
   );

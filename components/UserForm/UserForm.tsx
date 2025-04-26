@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  FieldErrors,
-  RegisterOptions,
-  SubmitHandler,
-  UseFormHandleSubmit,
-} from "react-hook-form";
+import { SubmitHandler, useFormContext } from "react-hook-form";
 import { Alert, Button, Form, Label, TextInput } from "@trussworks/react-uswds";
 
 export type UserFormInput = {
@@ -14,17 +9,16 @@ export type UserFormInput = {
 
 type UserFormProps = {
   successMessage: string;
-  register: (
-    name: string,
-    options?: RegisterOptions,
-  ) => { ref; name; onChange; onBlur };
-  handleSubmit: UseFormHandleSubmit<UserFormInput, UserFormInput>;
   onSubmit: SubmitHandler<UserFormInput>;
-  errors: FieldErrors<UserFormInput>;
 };
 
 const UserForm = (props: UserFormProps) => {
-  const { successMessage, register, handleSubmit, onSubmit, errors } = props;
+  const { successMessage, onSubmit } = props;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useFormContext();
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
