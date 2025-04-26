@@ -1,33 +1,44 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import UserForm from "./UserForm";
+import { useReactHookForm } from "../../.storybook/decorators";
 
-//👇 This default export determines where your story goes in the story list
-const meta: Meta<typeof UserForm> = {
+// Add formErrors as a custom arg for our story
+type UserFormStoryArgs = React.ComponentProps<typeof UserForm> & {
+  errors?: string[];
+};
+
+const meta: Meta<UserFormStoryArgs> = {
   title: "Components/UserForm",
   component: UserForm,
+  decorators: [useReactHookForm],
+  args: {
+    onSubmit: () => null,
+  },
+  argTypes: {
+    // Don't show onSubmit in the Controls tab
+    onSubmit: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof UserForm>;
+type Story = StoryObj<UserFormStoryArgs>;
 
-export const Basic: Story = {
-  args: {
-    firstName: "Kay",
-    lastName: "Sarnasaurus",
-  },
-};
+export const Default: Story = {};
+
 export const Error: Story = {
   args: {
-    firstName: "Kay",
-    lastName: "Sarnasaurus",
-    errorMessage: "Oops",
+    errors: [
+      "There was an unknown error submitting the form. Please try again.",
+    ],
   },
 };
 export const Success: Story = {
   args: {
-    firstName: "Kay",
-    lastName: "Sarnasaurus",
     successMessage: "Yay",
   },
 };

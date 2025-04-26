@@ -1,25 +1,55 @@
 "use client";
 import React, { useState } from "react";
+import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
 import "../globals.css";
-import UserForm from "../../components/UserForm/UserForm";
+import UserForm, { UserFormInput } from "../../components/UserForm/UserForm";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
 export default function UserFormPage() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const formMethods = useForm<UserFormInput>();
+
+  const onSubmit: SubmitHandler<UserFormInput> = async (userData) => {
+    try {
+      const response = await fetch("http://localhost:8000/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        // Handle success
+        setSuccessMessage("Form submitted successfully!");
+        formMethods.clearErrors(); // Clear any previous errors
+        console.log("User added successfully!");
+      } else {
+        // Handle error
+        const errorData = await response.json();
+        formMethods.setError("root.serverError", {
+          type: response.statusText,
+          message:
+            "There was a server error submitting the form. Please try again.",
+        });
+        setSuccessMessage(null); // Clear any previous success messages
+        console.error("Error adding user.", errorData);
+      }
+    } catch (error) {
+      formMethods.setError("root.unknownError", {
+        type: "unknown",
+        message:
+          "There was an unknown error submitting the form. Please try again.",
+      });
+      setSuccessMessage(null); // Clear any previous success messages
+      console.error("Error adding user.", error);
+    }
+  };
 
   const userFormProps = {
-    firstName: firstName,
-    setFirstName: setFirstName,
-    lastName: lastName,
-    setLastName: setLastName,
-    errorMessage: errorMessage,
-    setErrorMessage: setErrorMessage,
-    successMessage: successMessage,
-    setSuccessMessage: setSuccessMessage,
+    successMessage,
+    onSubmit,
   };
 
   return (
@@ -43,7 +73,9 @@ export default function UserFormPage() {
         }}
       >
         <h1 style={{ marginBottom: "20px" }}>User Registration</h1>
-        <UserForm {...userFormProps} />
+        <FormProvider {...formMethods}>
+          <UserForm {...userFormProps} />
+        </FormProvider>
       </div>
     </div>
   );
