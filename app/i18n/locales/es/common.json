@@ -1,0 +1,10 @@
+{
+    "buttons": {
+      "submit": "Submit",
+      "cancel": "Cancel"
+    },
+    "errors": {
+      "required": "This field is required.",
+      "invalid": "Invalid input."
+    }
+  }
