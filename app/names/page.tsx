@@ -87,8 +87,10 @@ export default function NamePage() {
           <span className="usa-hint">
             i.e. maiden name, religious, alias, etc
           </span>
-          <Radio id="previousNames-yes" name="previousNames-yes" label="yes" />
-          <Radio id="previousNames-no" name="previousNames-no" label="no" />
+          <div className="usa-radio">
+            <Radio id="previousNames-yes" name="previousNames" label="yes" />
+            <Radio id="previousNames-no" name="previousNames" label="no" />
+          </div>
 
           {/* Previous names textboxes*/}
           <Label htmlFor="previous-name-1">
@@ -113,8 +115,10 @@ export default function NamePage() {
             A telecode is a 4 digit code that represents characters in some
             non-Roman alphabet names
           </span>
-          <Radio id="telecode-yes" name="telecode-yes" label="yes" />
-          <Radio id="telecode-no" name="telecode-no" label="no" />
+          <div className="usa-radio">
+            <Radio id="telecode-yes" name="telecode" label="yes" />
+            <Radio id="telecode-no" name="telecode" label="no" />
+          </div>
         </Fieldset>
         <Button type="submit">Next</Button>
       </Form>
