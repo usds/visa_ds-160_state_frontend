@@ -6,11 +6,12 @@ import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 import {
   Alert,
+  Button,
   Checkbox,
   Fieldset,
   Form,
-  InputGroup,
   Label,
+  Radio,
   TextInput,
 } from "@trussworks/react-uswds";
 
@@ -38,49 +39,84 @@ export default function NamePage() {
       <Form onSubmit={formMethods.handleSubmit(onSubmit)}>
         <Fieldset legend="Name on your current passport">
           {/* Surnames */}
-          <InputGroup>
-            <Label htmlFor="surnames">
-              Surnames (Last Names)
-              <abbr title="required" className="usa-label--required">
-                *
-              </abbr>
-            </Label>
-            <span className="usa-hint">
-              Enter all surnames (last names) as listed in your passport.
-            </span>
-            <TextInput id="surnames" required={true} />
-          </InputGroup>
+          <Label htmlFor="surnames">
+            Surnames (Last Names)
+            <abbr title="required" className="usa-label--required">
+              *
+            </abbr>
+          </Label>
+          <span className="usa-hint">
+            Enter all surnames (last names) as listed in your passport.
+          </span>
+          <TextInput id="surnames" required={true} />
 
           {/* Given names */}
-          <InputGroup>
-            <Label htmlFor="givenNames">
-              Given (First) Names
-              <abbr title="required" className="usa-label--required">
-                *
-              </abbr>
-            </Label>
-            <span className="usa-hint">
-              Enter your first names as listed in your passport.
-            </span>
-            <TextInput id="givenNames" required={true} />
-          </InputGroup>
+          <Label htmlFor="givenNames">
+            Given (First) Names
+            <abbr title="required" className="usa-label--required">
+              *
+            </abbr>
+          </Label>
+          <span className="usa-hint">
+            Enter your first names as listed in your passport.
+          </span>
+          <TextInput id="givenNames" required={true} />
 
           {/* Native Alphabet */}
-          <InputGroup>
-            <Label htmlFor="nativeAlphabetName">
-              Full Name in Native Alphabet
-              <abbr title="required" className="usa-label--required">
-                *
-              </abbr>
-            </Label>
-            <TextInput id="nativeAlphabetName" required={true} />
-            <Checkbox
-              id="nativeAlphabetDoesNotApply"
-              name="nativeAlphabetDoesNotApply"
-              label="Does not apply"
-            />
-          </InputGroup>
+          <Label htmlFor="nativeAlphabetName">
+            Full Name in Native Alphabet
+            <abbr title="required" className="usa-label--required">
+              *
+            </abbr>
+          </Label>
+          <TextInput id="nativeAlphabetName" required={true} />
+          <Checkbox
+            id="nativeAlphabetDoesNotApply"
+            name="nativeAlphabetDoesNotApply"
+            label="Does not apply"
+          />
         </Fieldset>
+        <Fieldset legend="Previous names">
+          {/* Previous names yes/no */}
+          <Label htmlFor="previous-names">
+            Have you ever used any other names?
+            <abbr title="required" className="usa-label--required">
+              *
+            </abbr>
+          </Label>
+          <span className="usa-hint">
+            i.e. maiden name, religious, alias, etc
+          </span>
+          <Radio id="previousNames-yes" name="previousNames-yes" label="yes" />
+          <Radio id="previousNames-no" name="previousNames-no" label="no" />
+
+          {/* Previous names textboxes*/}
+          <Label htmlFor="previous-name-1">
+            Name 1
+            <abbr title="required" className="usa-label--required">
+              *
+            </abbr>
+          </Label>
+          <TextInput id="previous-name-1" required={true} />
+          <Button type="button" outline>
+            + Add another name
+          </Button>
+
+          {/* Telecode yes/no */}
+          <Label htmlFor="telecode">
+            Do you have a telecode that represents your name?
+            <abbr title="required" className="usa-label--required">
+              *
+            </abbr>
+          </Label>
+          <span className="usa-hint">
+            A telecode is a 4 digit code that represents characters in some
+            non-Roman alphabet names
+          </span>
+          <Radio id="telecode-yes" name="telecode-yes" label="yes" />
+          <Radio id="telecode-no" name="telecode-no" label="no" />
+        </Fieldset>
+        <Button type="submit">Next</Button>
       </Form>
     </FormProvider>
   );
