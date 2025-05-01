@@ -39,11 +39,8 @@ export default function NamePage() {
       <Form onSubmit={formMethods.handleSubmit(onSubmit)}>
         <Fieldset legend="Name on your current passport">
           {/* Surnames */}
-          <Label htmlFor="surnames">
+          <Label htmlFor="surnames" requiredMarker>
             Surnames (Last Names)
-            <abbr title="required" className="usa-label--required">
-              *
-            </abbr>
           </Label>
           <span className="usa-hint">
             Enter all surnames (last names) as listed in your passport.
@@ -51,11 +48,8 @@ export default function NamePage() {
           <TextInput id="surnames" required={true} />
 
           {/* Given names */}
-          <Label htmlFor="givenNames">
+          <Label htmlFor="givenNames" requiredMarker>
             Given (First) Names
-            <abbr title="required" className="usa-label--required">
-              *
-            </abbr>
           </Label>
           <span className="usa-hint">
             Enter your first names as listed in your passport.
@@ -63,11 +57,8 @@ export default function NamePage() {
           <TextInput id="givenNames" required={true} />
 
           {/* Native Alphabet */}
-          <Label htmlFor="nativeAlphabetName">
+          <Label htmlFor="nativeAlphabetName" requiredMarker>
             Full Name in Native Alphabet
-            <abbr title="required" className="usa-label--required">
-              *
-            </abbr>
           </Label>
           <TextInput id="nativeAlphabetName" required={true} />
           <Checkbox
@@ -78,26 +69,17 @@ export default function NamePage() {
         </Fieldset>
         <Fieldset legend="Previous names">
           {/* Previous names yes/no */}
-          <Label htmlFor="previous-names">
-            Have you ever used any other names?
-            <abbr title="required" className="usa-label--required">
-              *
-            </abbr>
-          </Label>
-          <span className="usa-hint">
-            i.e. maiden name, religious, alias, etc
-          </span>
-          <div className="usa-radio">
+          <Fieldset legend="Have you ever used any other names?" requiredMarker>
+            <span className="usa-hint">
+              i.e. maiden name, religious, alias, etc
+            </span>
             <Radio id="previousNames-yes" name="previousNames" label="yes" />
             <Radio id="previousNames-no" name="previousNames" label="no" />
-          </div>
+          </Fieldset>
 
           {/* Previous names textboxes*/}
-          <Label htmlFor="previous-name-1">
+          <Label htmlFor="previous-name-1" requiredMarker>
             Name 1
-            <abbr title="required" className="usa-label--required">
-              *
-            </abbr>
           </Label>
           <TextInput id="previous-name-1" required={true} />
           <Button type="button" outline>
@@ -105,20 +87,17 @@ export default function NamePage() {
           </Button>
 
           {/* Telecode yes/no */}
-          <Label htmlFor="telecode">
-            Do you have a telecode that represents your name?
-            <abbr title="required" className="usa-label--required">
-              *
-            </abbr>
-          </Label>
-          <span className="usa-hint">
-            A telecode is a 4 digit code that represents characters in some
-            non-Roman alphabet names
-          </span>
-          <div className="usa-radio">
+          <Fieldset
+            legend="Do you have a telecode that represents your name?"
+            requiredMarker
+          >
+            <span className="usa-hint">
+              A telecode is a 4 digit code that represents characters in some
+              non-Roman alphabet names
+            </span>
             <Radio id="telecode-yes" name="telecode" label="yes" />
             <Radio id="telecode-no" name="telecode" label="no" />
-          </div>
+          </Fieldset>
         </Fieldset>
         <Button type="submit">Next</Button>
       </Form>
