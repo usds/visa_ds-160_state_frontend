@@ -6,7 +6,7 @@ import "@trussworks/react-uswds/lib/index.css";
 
 import { GovBanner, Grid, GridContainer } from "@trussworks/react-uswds";
 
-import AppHeaderSimple from "../components/UI/AppHeaderSimple";
+import AppHeaderSimple from "@/components/UI/AppHeaderSimple";
 
 export const metadata: Metadata = {
   title: "U.S. Department of State - Consular Electronic Application Center",
