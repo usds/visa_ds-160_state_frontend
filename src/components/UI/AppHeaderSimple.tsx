@@ -7,6 +7,7 @@ import {
   PrimaryNav,
   Title,
 } from "@trussworks/react-uswds";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 function AppHeaderSimple() {
   const projectName = "DS-160 Nonimmigrant Visa Application";
@@ -41,6 +42,7 @@ function AppHeaderSimple() {
           <NavMenuButton label="Menu" />
         </div>
         <PrimaryNav items={testItemsMenu}></PrimaryNav>
+        <LocaleSwitcher></LocaleSwitcher>
       </div>
     </Header>
   );

@@ -1,0 +1,11 @@
+{
+  "Home": {
+    "enter": "Ingrese"
+  },
+
+  "LocaleSwitcher": {
+    "en": "Inglés",
+    "es": "Español",
+    "label": "Language"
+  }
+}

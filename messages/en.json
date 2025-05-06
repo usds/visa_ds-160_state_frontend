@@ -1,0 +1,10 @@
+{
+  "Home": {
+    "enter": "Enter"
+  },
+  "LocaleSwitcher": {
+    "en": "English",
+    "es": "Spanish",
+    "label": "Language"
+  }
+}
