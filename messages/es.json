@@ -12,5 +12,15 @@
     "first-name": "Nombre",
     "last-name": "Apellido",
     "submit": "Enviar"
+  },
+  "UserFormPage": {
+    "success-message": "¡Formulario enviado exitosamente!",
+    "server-error-message": "Error al enviar el formulario. Por favor, inténtelo de nuevo.",
+    "unknown-error-message": "There was an unknown error submitting the form. Please try again.",
+    "header": "Registro de Usuario"
+  },
+  "AppHeader": {
+    "home": "Hogar",
+    "project-name": "Solicitud de Visa de No Inmigrante DS-160"
   }
 }

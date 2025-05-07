@@ -11,5 +11,15 @@
     "first-name": "First Name",
     "last-name": "Last Name",
     "submit": "Submit"
+  },
+  "UserFormPage": {
+    "success": "Form submitted successfully!",
+    "server-error-message": "Error creating user, please try again.",
+    "unknown-error-message": "There was an unknown error submitting the form. Please try again.",
+    "header": "User Registration"
+  },
+  "AppHeader": {
+    "home": "Home",
+    "project-name": "DS-160 Nonimmigrant Visa Application"
   }
 }

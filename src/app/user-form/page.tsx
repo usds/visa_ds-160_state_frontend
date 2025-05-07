@@ -5,10 +5,12 @@ import "../globals.css";
 import UserForm, { UserFormInput } from "@/components/UserForm/UserForm";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
+import { useTranslations } from "next-intl";
 
 export default function UserFormPage() {
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const formMethods = useForm<UserFormInput>();
+  const t = useTranslations("UserFormPage");
 
   const onSubmit: SubmitHandler<UserFormInput> = async (userData) => {
     try {
@@ -22,7 +24,7 @@ export default function UserFormPage() {
 
       if (response.ok) {
         // Handle success
-        setSuccessMessage("Form submitted successfully!");
+        setSuccessMessage(t("success-message"));
         formMethods.clearErrors(); // Clear any previous errors
         console.log("User added successfully!");
       } else {
@@ -30,8 +32,7 @@ export default function UserFormPage() {
         const errorData = await response.json();
         formMethods.setError("root.serverError", {
           type: response.statusText,
-          message:
-            "There was a server error submitting the form. Please try again.",
+          message: t("server-error-message"),
         });
         setSuccessMessage(null); // Clear any previous success messages
         console.error("Error adding user.", errorData);
@@ -39,8 +40,7 @@ export default function UserFormPage() {
     } catch (error) {
       formMethods.setError("root.unknownError", {
         type: "unknown",
-        message:
-          "There was an unknown error submitting the form. Please try again.",
+        message: t("unknown-error-message"),
       });
       setSuccessMessage(null); // Clear any previous success messages
       console.error("Error adding user.", error);
@@ -72,7 +72,7 @@ export default function UserFormPage() {
           alignItems: "center",
         }}
       >
-        <h1 style={{ marginBottom: "20px" }}>User Registration</h1>
+        <h1 style={{ marginBottom: "20px" }}>{t("header")}</h1>
         <FormProvider {...formMethods}>
           <UserForm {...userFormProps} />
         </FormProvider>
