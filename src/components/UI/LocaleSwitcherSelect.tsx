@@ -19,7 +19,8 @@ export default function LocaleSwitcherSelect({
 }: Props) {
   const [isPending, startTransition] = useTransition();
 
-  function onChange(value: string) {
+  function onChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    const value = event.target.value;
     console.log("onChange", value);
     const locale = value as Locale;
     startTransition(() => {
@@ -35,9 +36,12 @@ export default function LocaleSwitcherSelect({
         id="locale-select"
         onChange={onChange}
         aira-label={label}
+        className={isPending && "opacity-60"}
       >
         {items.map((item) => (
-          <option value={item.value}>{item.label}</option>
+          <option key={item.value} value={item.value}>
+            {item.label}
+          </option>
         ))}
       </Select>
       {/* <Select.Root defaultValue={defaultValue} onValueChange={onChange}>
