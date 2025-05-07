@@ -1,3 +1,6 @@
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
+
 import type { Metadata } from "next";
 
 import "./globals.css";
@@ -13,13 +16,15 @@ export const metadata: Metadata = {
   description: "DS-160 Nonimmigrant Visa Application",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body>
         <GovBanner />
         <AppHeaderSimple />
@@ -32,7 +37,7 @@ export default function RootLayout({
               desktop={{ col: 6 }}
               className="padding-x-205 margin-bottom-4"
             >
-              <main>{children}</main>
+              <NextIntlClientProvider>{children}</NextIntlClientProvider>
             </Grid>
           </Grid>
         </GridContainer>

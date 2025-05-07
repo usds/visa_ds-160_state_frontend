@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("HomePage");
   return (
     <div
       style={{
@@ -12,9 +14,7 @@ export default function Home() {
     >
       <div>
         <h1 className="text-4xl font-bold">U.S. Department of State</h1>
-        <h2 className="text-2xl font-bold">
-          Consular Electronic Application Center
-        </h2>
+        <h2 className="text-2xl font-bold">{t("title")}</h2>
         <div className="flex justify-center">
           <Image
             src="/images/ca-logo.png"
