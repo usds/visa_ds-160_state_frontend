@@ -6,5 +6,10 @@
     "en": "English",
     "es": "Spanish",
     "label": "Language"
+  },
+  "UserForm": {
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "submit": "Submit"
   }
 }

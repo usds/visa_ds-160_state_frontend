@@ -1,11 +1,16 @@
 {
   "Home": {
-    "enter": "Ingrese"
+    "enter": "Entrar"
   },
-
   "LocaleSwitcher": {
     "en": "Inglés",
     "es": "Español",
     "label": "Language"
+  },
+  "UserForm": {
+    "header": "Registro de Usuario",
+    "first-name": "Nombre",
+    "last-name": "Apellido",
+    "submit": "Enviar"
   }
 }
