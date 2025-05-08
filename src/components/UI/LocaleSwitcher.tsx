@@ -48,7 +48,7 @@ export default function LocaleSwitcher() {
     <LanguageSelector
       id="locale-select"
       langs={langs}
-      className={isPending ?? "opacity-50"}
+      className={isPending && "opacity-60"}
       defaultValue={locale}
     />
   );
