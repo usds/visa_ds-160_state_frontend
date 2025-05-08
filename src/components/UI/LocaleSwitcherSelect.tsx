@@ -35,7 +35,7 @@ export default function LocaleSwitcherSelect({
         defaultValue={defaultValue}
         id="locale-select"
         onChange={onChange}
-        aira-label={label}
+        aria-label={label}
         className={isPending && "opacity-60"}
       >
         {items.map((item) => (

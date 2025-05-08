@@ -14,8 +14,8 @@
   },
   "UserFormPage": {
     "success": "Form submitted successfully!",
-    "server-error-message": "Error creating user, please try again.",
-    "unknown-error-message": "There was an unknown error submitting the form. Please try again.",
+    "server-error-message": "A server error occurred while submitting the form. Please try again.",
+    "unknown-error-message": "An unknown error occurred while submitting the form. Please try again.",
     "header": "User Registration"
   },
   "AppHeader": {
