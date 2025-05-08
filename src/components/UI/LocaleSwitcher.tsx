@@ -12,14 +12,21 @@ export default function LocaleSwitcher() {
   // TODO automate this from the locales in the config
   // TODO use label_local somehow
   // https://trussworks.github.io/react-uswds/?path=/docs/components-languageselector--docs
-  const items: { value: Locale; label: string }[] = [
+  const items: { value: Locale; label: string; label_local: string }[] = [
     {
       value: "en",
       label: t("en"),
+      label_local: "English",
     },
     {
       value: "es",
       label: t("es"),
+      label_local: "Español",
+    },
+    {
+      value: "fr",
+      label: t("fr"),
+      label_local: "Français",
     },
   ];
 
