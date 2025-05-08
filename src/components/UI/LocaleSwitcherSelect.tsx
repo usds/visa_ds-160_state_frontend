@@ -4,7 +4,7 @@
 import { useTransition } from "react";
 import { Locale } from "@/i18n/config";
 import { setUserLocale } from "@/services/locale";
-import { Select } from "@trussworks/react-uswds";
+import { LanguageSelector } from "@trussworks/react-uswds";
 
 type Props = {
   defaultValue: string;
@@ -12,38 +12,29 @@ type Props = {
   label: string;
 };
 
-export default function LocaleSwitcherSelect({
-  defaultValue,
-  items,
-  label,
-}: Props) {
+export default function LocaleSwitcherSelect({ defaultValue, items }: Props) {
   const [isPending, startTransition] = useTransition();
 
-  function onChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    const value = event.target.value;
-    console.log("onChange", value);
-    const locale = value as Locale;
+  function onChange(locale: Locale) {
+    // const locale = item.value as Locale;
     startTransition(() => {
       setUserLocale(locale);
     });
   }
+  const langs = items.map((item) => ({
+    attr: item.value,
+    label: item.label,
+    on_click: () => {
+      onChange(item.value as Locale);
+    },
+  }));
 
   return (
-    <div className="relative">
-      {/* <Label htmlFor="locale-select">Select Language</Label> */}
-      <Select
-        defaultValue={defaultValue}
-        id="locale-select"
-        onChange={onChange}
-        aria-label={label}
-        className={isPending && "opacity-60"}
-      >
-        {items.map((item) => (
-          <option key={item.value} value={item.value}>
-            {item.label}
-          </option>
-        ))}
-      </Select>
-    </div>
+    <LanguageSelector
+      id="locale-select"
+      langs={langs}
+      className={isPending ?? "opacity-50"}
+      defaultValue={defaultValue}
+    />
   );
 }
