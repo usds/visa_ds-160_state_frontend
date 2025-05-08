@@ -1,6 +1,7 @@
 import React from "react";
 import { SubmitHandler, useFormContext } from "react-hook-form";
 import { Alert, Button, Form, Label, TextInput } from "@trussworks/react-uswds";
+import { useTranslations } from "next-intl";
 
 export type UserFormInput = {
   firstName: string;
@@ -13,6 +14,7 @@ type UserFormProps = {
 };
 
 const UserForm = (props: UserFormProps) => {
+  const t = useTranslations("UserForm");
   const { successMessage, onSubmit } = props;
   const {
     register,
@@ -34,11 +36,11 @@ const UserForm = (props: UserFormProps) => {
         </Alert>
       )}
 
-      <Label htmlFor="first-name">First Name</Label>
+      <Label htmlFor="first-name">{t("first-name")}</Label>
       <TextInput {...register("firstName")} required />
-      <Label htmlFor="last-name">Last Name</Label>
+      <Label htmlFor="last-name">{t("last-name")}</Label>
       <TextInput {...register("lastName")} required />
-      <Button type="submit">Submit</Button>
+      <Button type="submit">{t("submit")}</Button>
     </Form>
   );
 };

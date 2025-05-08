@@ -7,14 +7,17 @@ import {
   PrimaryNav,
   Title,
 } from "@trussworks/react-uswds";
+import LocaleSwitcher from "./LocaleSwitcher";
+import { useTranslations } from "next-intl";
 
 function AppHeaderSimple() {
-  const projectName = "DS-160 Nonimmigrant Visa Application";
+  const t = useTranslations("AppHeader");
+  const projectName = t("project-name");
   const projectLogo = "/images/dos-logo.png";
 
   const testItemsMenu = [
     <Link href="/" key="one" className="usa-nav__link">
-      <span className="text-white">Home</span>
+      <span className="text-white">{t("home")}</span>
     </Link>,
     <Link href="/search" key="two" className="usa-nav__link">
       <span className="text-white">Search</span>
@@ -41,6 +44,7 @@ function AppHeaderSimple() {
           <NavMenuButton label="Menu" />
         </div>
         <PrimaryNav items={testItemsMenu}></PrimaryNav>
+        <LocaleSwitcher></LocaleSwitcher>
       </div>
     </Header>
   );

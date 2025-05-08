@@ -1,7 +1,9 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+  const t = useTranslations("Home");
   return (
     <div
       style={{
@@ -25,7 +27,7 @@ export default function Home() {
         </div>
         <Link href="/user-form">
           <button className="bg-blue-500 text-black px-4 py-2 rounded mt-4">
-            Enter
+            {t("enter")}
           </button>
         </Link>
       </div>

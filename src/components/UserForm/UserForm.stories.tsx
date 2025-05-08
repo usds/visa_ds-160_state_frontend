@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import UserForm from "./UserForm";
-import { useReactHookForm } from "../../.storybook/decorators";
+import { useReactHookForm } from "../../../.storybook/decorators";
 
 // Add formErrors as a custom arg for our story
 type UserFormStoryArgs = React.ComponentProps<typeof UserForm> & {
