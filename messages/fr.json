@@ -22,6 +22,11 @@
     },
     "AppHeader": {
         "home": "Accueil",
-        "project-name": "Demande de visa non-immigrant DS-160"
+        "project-name": "Demande de DS-160",
+        "my-account": "Mon compte",
+        "application": "Demande",
+        "profile": "Profil",
+        "logout": "Déconnexion",
+        "resources": "Ressources"
     }
 }
