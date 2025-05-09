@@ -20,7 +20,12 @@
   },
   "AppHeader": {
     "home": "Home",
-    "project-name": "DS-160 Application"
+    "project-name": "DS-160 Application",
+    "my-account": "My Account",
+    "application": "Application",
+    "profile": "Profile",
+    "logout": "Logout",
+    "resources": "Resources"
   },
   "PassportDetails": {
     "header": "Passport Details",

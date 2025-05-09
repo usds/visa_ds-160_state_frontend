@@ -28,10 +28,10 @@ function AppHeaderSimple() {
 
   const myAccountMenuItems = [
     <Link href="#linkOne" key="one">
-      Profile
+      {t("profile")}
     </Link>,
     <Link href="#linkTwo" key="two">
-      Logout
+      {t("logout")}
     </Link>,
   ];
 
@@ -49,7 +49,7 @@ function AppHeaderSimple() {
         }}
         menuId="myAccountDropdown"
         isOpen={isOpen[0]}
-        label="My Account"
+        label={t("my-account")}
       />
       <Menu
         key="myAccount"
@@ -65,7 +65,7 @@ function AppHeaderSimple() {
         }}
         menuId="myApplicationMenu"
         isOpen={isOpen[1]}
-        label="Application"
+        label={t("application")}
         // TODO: state management for this
         isCurrent={true}
       />
@@ -77,7 +77,7 @@ function AppHeaderSimple() {
       />
     </>,
     <Link href="#two" key="two" className="usa-nav__link">
-      <span>Resources</span>
+      <span>{t("resources")}</span>
     </Link>,
     <LocaleSwitcher key="locale"></LocaleSwitcher>,
   ];
