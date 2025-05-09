@@ -3,10 +3,10 @@
         "enter": "Entrer"
     },
     "LocaleSwitcher": {
-        "en": "Anglais",
-        "es": "Espagnol",
+        "en": "English",
+        "es": "Español",
         "fr": "Français",
-        "label": "Langue"
+        "label": "Language"
     },
     "UserForm": {
         "header": "Enregistrement de l'utilisateur",

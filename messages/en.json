@@ -4,9 +4,8 @@
   },
   "LocaleSwitcher": {
     "en": "English",
-    "es": "Spanish",
-    "fr": "French",
-    "label": "Language"
+    "es": "Español",
+    "fr": "Français"
   },
   "UserForm": {
     "first-name": "First Name",
