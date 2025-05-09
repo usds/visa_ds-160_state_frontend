@@ -32,14 +32,14 @@ export default function PassportDetailsPage() {
             {t("doc-type-select-label")}
           </Label>
           <Select id="doc-type-select" name="doc-type-select">
-            <option>{t("regular-passport")}</option>
+            <option value="tourist">{t("regular-passport")}</option>
           </Select>
           <h3>{t("issuer-header")}</h3>
           <Label htmlFor="issuer-select" requiredMarker>
             {t("issuer-select-label")}
           </Label>
           <Select id="issuer-select" name="issuer-select">
-            <option>{t("issuer-option")}</option>
+            <option>{t("issuer-select-option")}</option>
           </Select>
         </Fieldset>
         <Button type="submit">{t("submit")}</Button>
