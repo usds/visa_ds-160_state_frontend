@@ -74,7 +74,8 @@ export default function PassportDetailsPage() {
           />
           {/* <h3>{t("issuance-date")}</h3> */}
           {/* // TODO extract into date component */}
-          <Fieldset legend={t("issuance-date")} legendStyle="large">
+          <Fieldset legendStyle="large">
+            <h3>{t("issuance-date")}</h3>
             {/* // we need a medium legend style thats smaller than h1 */}
             <DateInputGroup>
               <FormGroup className="usa-form-group--month usa-form-group--select">
@@ -114,7 +115,8 @@ export default function PassportDetailsPage() {
               />
             </DateInputGroup>
           </Fieldset>
-          <Fieldset legend={t("expiration-date")} legendStyle="large">
+          <Fieldset>
+            <h3>{t("expiration-date")}</h3>
             <DateInputGroup>
               <FormGroup className="usa-form-group--month usa-form-group--select">
                 <Label htmlFor="input-select">{t("month")}</Label>
