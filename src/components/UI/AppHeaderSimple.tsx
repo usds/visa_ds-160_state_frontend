@@ -1,50 +1,98 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
+"use client";
+
+import React, { useState } from "react";
 import {
   Header,
   NavMenuButton,
   PrimaryNav,
+  Link,
   Title,
+  NavDropDownButton,
+  Menu,
 } from "@trussworks/react-uswds";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { useTranslations } from "next-intl";
 
 function AppHeaderSimple() {
   const t = useTranslations("AppHeader");
-  const projectName = t("project-name");
-  const projectLogo = "/images/dos-logo.png";
 
-  const testItemsMenu = [
-    <Link href="/" key="one" className="usa-nav__link">
-      <span className="text-white">{t("home")}</span>
+  const [expanded, setExpanded] = useState(false);
+  const onClick = (): void => setExpanded((prvExpanded) => !prvExpanded);
+
+  const [isOpen, setIsOpen] = useState([false, false]);
+  const onToggle = (idx): void => {
+    const newIsOpen = [...isOpen];
+    newIsOpen[idx] = !isOpen[idx];
+    setIsOpen(newIsOpen);
+  };
+
+  const myAccountMenuItems = [
+    <Link href="#linkOne" key="one">
+      Profile
     </Link>,
-    <Link href="/search" key="two" className="usa-nav__link">
-      <span className="text-white">Search</span>
+    <Link href="#linkTwo" key="two">
+      Logout
     </Link>,
   ];
 
+  const myApplicationMenuItems = [
+    <Link href="#linkOne" key="one">
+      Nav??
+    </Link>,
+  ];
+
+  const testItemsMenu = [
+    <>
+      <NavDropDownButton
+        onToggle={(): void => {
+          onToggle(0);
+        }}
+        menuId="testDropDownOne"
+        isOpen={isOpen[0]}
+        label="My Account"
+        isCurrent={true}
+      />
+      <Menu
+        key="myAccount"
+        items={myAccountMenuItems}
+        isOpen={isOpen[0]}
+        id="testDropDownOne"
+      />
+    </>,
+    <>
+      <NavDropDownButton
+        onToggle={(): void => {
+          onToggle(1);
+        }}
+        menuId="testDropDownTwo"
+        isOpen={isOpen[1]}
+        label="Application"
+      />
+      <Menu
+        key="myApplication"
+        items={myApplicationMenuItems}
+        isOpen={isOpen[1]}
+        id="testDropDownTwo"
+      />
+    </>,
+    <Link href="#two" key="two" className="usa-nav__link">
+      <span>Parent link</span>
+    </Link>,
+    <LocaleSwitcher key="locale"></LocaleSwitcher>,
+  ];
+
   return (
-    <Header
-      className="usa-header usa-header--basic bg-primary-darker min-h-16"
-      basic={true}
-    >
-      <div className="usa-nav-container bg-primary-darker">
-        <div className="usa-navbar grid-row text-white">
-          <div className="usa-logo flex-1 grid-col">
-            <Image
-              src={projectLogo}
-              alt="Project Logo"
-              height={60}
-              width={60}
-            />
-          </div>
-          <div style={{ paddingLeft: "1rem" }}></div>
-          <Title className="flex-2 grid-col">{projectName}</Title>
-          <NavMenuButton label="Menu" />
+    <Header basic={true}>
+      <div className="usa-nav-container">
+        <div className="usa-navbar">
+          <Title>{t("project-name")}</Title>
+          <NavMenuButton onClick={onClick} label="Menu" />
         </div>
-        <PrimaryNav items={testItemsMenu}></PrimaryNav>
-        <LocaleSwitcher></LocaleSwitcher>
+        <PrimaryNav
+          items={testItemsMenu}
+          mobileExpanded={expanded}
+          onToggleMobileNav={onClick}
+        ></PrimaryNav>
       </div>
     </Header>
   );
