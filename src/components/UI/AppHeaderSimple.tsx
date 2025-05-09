@@ -47,16 +47,15 @@ function AppHeaderSimple() {
         onToggle={(): void => {
           onToggle(0);
         }}
-        menuId="testDropDownOne"
+        menuId="myAccountDropdown"
         isOpen={isOpen[0]}
         label="My Account"
-        isCurrent={true}
       />
       <Menu
         key="myAccount"
         items={myAccountMenuItems}
         isOpen={isOpen[0]}
-        id="testDropDownOne"
+        id="myAccountDropdown"
       />
     </>,
     <>
@@ -64,19 +63,21 @@ function AppHeaderSimple() {
         onToggle={(): void => {
           onToggle(1);
         }}
-        menuId="testDropDownTwo"
+        menuId="myApplicationMenu"
         isOpen={isOpen[1]}
         label="Application"
+        // TODO: state management for this
+        isCurrent={true}
       />
       <Menu
         key="myApplication"
         items={myApplicationMenuItems}
         isOpen={isOpen[1]}
-        id="testDropDownTwo"
+        id="myApplicationMenu"
       />
     </>,
     <Link href="#two" key="two" className="usa-nav__link">
-      <span>Parent link</span>
+      <span>Resources</span>
     </Link>,
     <LocaleSwitcher key="locale"></LocaleSwitcher>,
   ];
