@@ -42,7 +42,7 @@ export default function PassportDetailsPage() {
           <h3>{t("doc-type-header")}</h3>
           <p>{t("doc-type-hint")}</p>
           <p>
-            Required fields are marked with an asterisk (<RequiredMarker />
+            {t("required-fields")} (<RequiredMarker />
             ).
           </p>
           {/* Passport Type */}

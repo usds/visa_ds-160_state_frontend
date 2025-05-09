@@ -25,6 +25,7 @@
   "PassportDetails": {
     "header": "Passport Details",
     "doc-type-header": "What type of passport or travel document do you have?",
+    "required-fields": "Required fields are marked with an asterisk",
     "doc-type-hint": "Enter the information on the travel document you will be using when traveling to the U.S.",
     "doc-type-select-label": "Your travel document should be a valid, unexpired passport or other valid, unexpired documentation that is sufficient to establish your identity and nationality.",
     "issuer-header": "Who issued your passport?",

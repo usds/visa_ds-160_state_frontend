@@ -23,6 +23,7 @@
     "PassportDetails": {
         "header": "Détails du passeport",
         "doc-type-header": "Quel type de passeport ou de document de voyage avez-vous ?",
+        "required-fields": "Les champs marqués d'un astérisque sont obligatoires.",
         "doc-type-hint": "Entrez les informations sur le document de voyage que vous utiliserez pour voyager aux États-Unis.",
         "doc-type-select-label": "Votre document de voyage doit être un passeport valide et non expiré ou une autre documentation valide et non expirée suffisante pour établir votre identité et votre nationalité.",
         "issuer-header": "Qui a délivré votre passeport ?",

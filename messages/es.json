@@ -23,6 +23,7 @@
   "PassportDetails": {
     "header": "Detalles del Pasaporte",
     "doc-type-header": "¿Qué tipo de pasaporte o documento de viaje tiene?",
+    "required-fields": "Los campos marcados con un asterisco son obligatorios",
     "doc-type-hint": "Ingrese la información del documento de viaje que utilizará al viajar a los EE. UU.",
     "doc-type-select-label": "Su documento de viaje debe ser un pasaporte válido y no vencido u otra documentación válida y no vencida que sea suficiente para establecer su identidad y nacionalidad.",
     "issuer-header": "¿Quién emitió su pasaporte?",
