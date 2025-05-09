@@ -21,5 +21,16 @@
   "AppHeader": {
     "home": "Home",
     "project-name": "DS-160 Nonimmigrant Visa Application"
+  },
+  "PassportDetails": {
+    "header": "Passport Details",
+    "doc-type-header": "What type of passport or travel document do you have?",
+    "doc-type-hint": "Enter the information on the travel document you will be using when traveling to the U.S.",
+    "doc-type-select-label": "Your travel document should be a valid, unexpired passport or other valid, unexpired documentation that is sufficient to establish your identity and nationality.",
+    "issuer-header": "Who issued your passport?",
+    "issuer-select-label": "Choose the country or authority that issued the document you will use to travel to the United States.",
+    "issuer-option": "Select country / authority",
+    "regular-passport": "Regular / Tourist passport",
+    "submit": "Continue"
   }
 }
