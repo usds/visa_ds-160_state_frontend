@@ -3,8 +3,9 @@
     "enter": "Entrar"
   },
   "LocaleSwitcher": {
-    "en": "Inglés",
+    "en": "English",
     "es": "Español",
+    "fr": "Français",
     "label": "Language"
   },
   "UserForm": {
