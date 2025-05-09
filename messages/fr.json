@@ -20,6 +20,27 @@
         "unknown-error-message": "Une erreur inconnue s'est produite lors de l'envoi du formulaire. Veuillez réessayer.",
         "header": "Enregistrement de l'utilisateur"
     },
+    "PassportDetails": {
+        "header": "Détails du passeport",
+        "doc-type-header": "Quel type de passeport ou de document de voyage avez-vous ?",
+        "required-fields": "Les champs marqués d'un astérisque sont obligatoires.",
+        "doc-type-hint": "Entrez les informations sur le document de voyage que vous utiliserez pour voyager aux États-Unis.",
+        "doc-type-select-label": "Votre document de voyage doit être un passeport valide et non expiré ou une autre documentation valide et non expirée suffisante pour établir votre identité et votre nationalité.",
+        "issuer-header": "Qui a délivré votre passeport ?",
+        "issuer-select-label": "Choisissez le pays ou l'autorité qui a délivré le document que vous utiliserez pour voyager aux États-Unis.",
+        "issuer-select-option": "Sélectionnez le pays / l'autorité",
+        "regular-passport": "Passeport régulier / de tourisme",
+        "book-number-header": "Numéro de carnet de passeport",
+        "book-number-hint": "Le numéro de carnet de passeport est communément appelé le numéro de contrôle d'inventaire. Il est possible que votre passeport ait ou non un numéro de carnet de passeport.",
+        "book-number-label": "L'emplacement du numéro de carnet de passeport sur votre passeport peut varier en fonction du pays qui a délivré votre passeport. Veuillez contacter l'autorité émettrice de votre passeport si vous ne parvenez pas à déterminer si votre passeport contient un numéro de carnet de passeport.",
+        "no-book-number-label": "Mon passeport n'a pas de numéro",
+        "issuance-date": "Date de délivrance",
+        "month": "Mois",
+        "day": "Jour",
+        "year": "Année",
+        "expiration-date": "Date d'expiration",
+        "submit": "Continuer"
+    },
     "AppHeader": {
         "home": "Accueil",
         "project-name": "Demande de visa non-immigrant DS-160"

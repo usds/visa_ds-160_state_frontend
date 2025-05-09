@@ -20,6 +20,27 @@
     "unknown-error-message": "Ocurrió un error desconocido al enviar el formulario. Por favor, inténtelo de nuevo.",
     "header": "Registro de Usuario"
   },
+  "PassportDetails": {
+    "header": "Detalles del Pasaporte",
+    "doc-type-header": "¿Qué tipo de pasaporte o documento de viaje tiene?",
+    "required-fields": "Los campos marcados con un asterisco son obligatorios",
+    "doc-type-hint": "Ingrese la información del documento de viaje que utilizará al viajar a los EE. UU.",
+    "doc-type-select-label": "Su documento de viaje debe ser un pasaporte válido y no vencido u otra documentación válida y no vencida que sea suficiente para establecer su identidad y nacionalidad.",
+    "issuer-header": "¿Quién emitió su pasaporte?",
+    "issuer-select-label": "Elija el país o la autoridad que emitió el documento que utilizará para viajar a los Estados Unidos.",
+    "issuer-select-option": "Seleccione país / autoridad",
+    "regular-passport": "Pasaporte regular / de turista",
+    "book-number-header": "Número de libro del pasaporte",
+    "book-number-hint": "El número de libro del pasaporte se conoce comúnmente como el número de control de inventario. Es posible que su pasaporte tenga o no un número de libro del pasaporte.",
+    "book-number-label": "La ubicación del número de libro del pasaporte en su pasaporte puede variar según el país que emitió su pasaporte. Comuníquese con la autoridad emisora de su pasaporte si no puede determinar si su pasaporte contiene un número de libro del pasaporte.",
+    "no-book-number-label": "Mi pasaporte no tiene un número",
+    "issuance-date": "Fecha de emisión",
+    "month": "Mes",
+    "day": "Día",
+    "year": "Año",
+    "expiration-date": "Fecha de vencimiento",
+    "submit": "Continuar"
+  },
   "AppHeader": {
     "home": "Hogar",
     "project-name": "Solicitud de Visa de No Inmigrante DS-160"
