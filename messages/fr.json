@@ -22,6 +22,21 @@
     },
     "AppHeader": {
         "home": "Accueil",
-        "project-name": "Demande de visa non-immigrant DS-160"
+        "project-name": "Demande de DS-160",
+        "my-account": "Mon compte",
+        "application": "Demande",
+        "profile": "Profil",
+        "logout": "Déconnexion",
+        "resources": "Ressources"
+    },
+    "ApplicationLayout": {
+        "getting-started": "Commencer",
+        "travel": "Voyage",
+        "family": "Famille",
+        "work-education": "Travail et éducation",
+        "us-contacts": "Contacts aux États-Unis",
+        "security": "Sécurité",
+        "passport-details": "Détails du passeport",
+        "name": "Nom"
     }
 }
