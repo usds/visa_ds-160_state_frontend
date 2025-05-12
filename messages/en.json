@@ -26,5 +26,15 @@
     "profile": "Profile",
     "logout": "Logout",
     "resources": "Resources"
+  },
+  "ApplicationLayout": {
+    "getting-started": "Getting Started",
+    "travel": "Travel",
+    "family": "Family",
+    "work-education": "Work & Education",
+    "us-contacts": "U.S. Contacts",
+    "security": "Security",
+    "passport-details": "Passport Details",
+    "name": "Name"
   }
 }
