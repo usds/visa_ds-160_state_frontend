@@ -26,6 +26,20 @@ function AppHeaderSimple() {
     newMenuIsOpen[idx] = !menuIsOpen[idx];
     setMenuIsOpen(newMenuIsOpen);
   };
+  const handleBlur = (
+    idx: number,
+    event: React.FocusEvent<HTMLElement>,
+  ): void => {
+    const parent = event.currentTarget.parentElement;
+    if (parent && parent.contains(event.relatedTarget as Node)) {
+      // Focus is still within the shared parent (button or menu)
+      return;
+    }
+    // Close the menu
+    const newMenuIsOpen = [...menuIsOpen];
+    newMenuIsOpen[idx] = false;
+    setMenuIsOpen(newMenuIsOpen);
+  };
 
   const myAccountMenuItems = [
     <Link href="#linkOne" key="one">
@@ -48,14 +62,16 @@ function AppHeaderSimple() {
         onToggle={(): void => {
           onToggle(0);
         }}
+        onBlur={(event): void => handleBlur(0, event)}
         menuId="myAccountDropdown"
-        menuIsOpen={menuIsOpen[0]}
+        isOpen={menuIsOpen[0]}
         label={t("my-account")}
       />
       <Menu
         key="myAccount"
+        onBlur={(event): void => handleBlur(0, event)}
         items={myAccountMenuItems}
-        menuIsOpen={menuIsOpen[0]}
+        isOpen={menuIsOpen[0]}
         id="myAccountDropdown"
       />
     </>,
@@ -64,16 +80,18 @@ function AppHeaderSimple() {
         onToggle={(): void => {
           onToggle(1);
         }}
+        onBlur={(event): void => handleBlur(1, event)}
         menuId="myApplicationMenu"
-        menuIsOpen={menuIsOpen[1]}
+        isOpen={menuIsOpen[1]}
         label={t("application")}
         // TODO: state management for this
         isCurrent={true}
       />
       <Menu
         key="myApplication"
+        onBlur={(event): void => handleBlur(1, event)}
         items={myApplicationMenuItems}
-        menuIsOpen={menuIsOpen[1]}
+        isOpen={menuIsOpen[1]}
         id="myApplicationMenu"
       />
     </>,
