@@ -16,14 +16,15 @@ import { useTranslations } from "next-intl";
 function AppHeaderSimple() {
   const t = useTranslations("AppHeader");
 
-  const [expanded, setExpanded] = useState(false);
-  const onClick = (): void => setExpanded((prvExpanded) => !prvExpanded);
+  const [mobileNavIsExpanded, setMobileNavIsExpanded] = useState(false);
+  const onClick = (): void =>
+    setMobileNavIsExpanded((prvMobileNavIsExpanded) => !prvMobileNavIsExpanded);
 
-  const [isOpen, setIsOpen] = useState([false, false]);
+  const [menuIsOpen, setMenuIsOpen] = useState([false, false]);
   const onToggle = (idx): void => {
-    const newIsOpen = [...isOpen];
-    newIsOpen[idx] = !isOpen[idx];
-    setIsOpen(newIsOpen);
+    const newMenuIsOpen = [...menuIsOpen];
+    newMenuIsOpen[idx] = !menuIsOpen[idx];
+    setMenuIsOpen(newMenuIsOpen);
   };
 
   const myAccountMenuItems = [
@@ -48,13 +49,13 @@ function AppHeaderSimple() {
           onToggle(0);
         }}
         menuId="myAccountDropdown"
-        isOpen={isOpen[0]}
+        menuIsOpen={menuIsOpen[0]}
         label={t("my-account")}
       />
       <Menu
         key="myAccount"
         items={myAccountMenuItems}
-        isOpen={isOpen[0]}
+        menuIsOpen={menuIsOpen[0]}
         id="myAccountDropdown"
       />
     </>,
@@ -64,7 +65,7 @@ function AppHeaderSimple() {
           onToggle(1);
         }}
         menuId="myApplicationMenu"
-        isOpen={isOpen[1]}
+        menuIsOpen={menuIsOpen[1]}
         label={t("application")}
         // TODO: state management for this
         isCurrent={true}
@@ -72,7 +73,7 @@ function AppHeaderSimple() {
       <Menu
         key="myApplication"
         items={myApplicationMenuItems}
-        isOpen={isOpen[1]}
+        menuIsOpen={menuIsOpen[1]}
         id="myApplicationMenu"
       />
     </>,
@@ -91,7 +92,7 @@ function AppHeaderSimple() {
         </div>
         <PrimaryNav
           items={testItemsMenu}
-          mobileExpanded={expanded}
+          mobileExpanded={mobileNavIsExpanded}
           onToggleMobileNav={onClick}
         ></PrimaryNav>
       </div>
