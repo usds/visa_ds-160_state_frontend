@@ -41,13 +41,9 @@ export default function PassportDetailsPage() {
 
   return (
     <FormProvider {...formMethods}>
-      {/* // TODO move this to a separate component */}
       <Form onSubmit={formMethods.handleSubmit(onSubmit)}>
         <Fieldset legend={t("header")} legendStyle="large">
-          <Fieldset legend={t("doc-type-header")}>
-
-            {/* // Should these be fieldset legends instead also? */}
-            <h3>{t("doc-type-header")}</h3>
+          <Fieldset legend={t("doc-type-header")} legendStyle="large">
             <p>{t("doc-type-hint")}</p>
             <p>
               {t("required-fields")} (<RequiredMarker />
@@ -68,8 +64,7 @@ export default function PassportDetailsPage() {
               <option>{t("issuer-select-option")}</option>
             </Select>
           </Fieldset>
-          <h3>{t("book-number-header")}</h3>
-          <fieldset legend={t("book-number-header")}>
+          <Fieldset legend={t("book-number-header")}>
             <p>{t("book-number-hint")}</p>
             <Label htmlFor="book-number" requiredMarker>
               {t("book-number-label")}
@@ -81,26 +76,25 @@ export default function PassportDetailsPage() {
               value="no-book-number"
               label={t("no-book-number-label")}
             />
-          </fieldset>
+          </Fieldset>
           <Fieldset legendStyle="large" legend={t("issuance-date")}>
             <DateInputGroup>
               <FormGroup className="usa-form-group--month usa-form-group--select">
                 <Label htmlFor="input-select">{t("month")}</Label>
                 <Select id="issuanceMonthInput" name="issuanceMonthInput">
-                  {/* TODO localize */}
                   <option>- Select -</option>
-                  <option value="1">01 - January</option>
-                  <option value="2">02 - February</option>
-                  <option value="3">03 - March</option>
-                  <option value="4">04 - April</option>
-                  <option value="5">05 - May</option>
-                  <option value="6">06 - June</option>
-                  <option value="7">07 - July</option>
-                  <option value="8">08 - August</option>
-                  <option value="9">09 - September</option>
-                  <option value="10">10 - October</option>
-                  <option value="11">11 - November</option>
-                  <option value="12">12 - December</option>
+                  <option value="1">{t("january")}</option>
+                  <option value="2">{t("february")}</option>
+                  <option value="3">{t("march")}</option>
+                  <option value="4">{t("april")}</option>
+                  <option value="5">{t("may")}</option>
+                  <option value="6">{t("june")}</option>
+                  <option value="7">{t("july")}</option>
+                  <option value="8">{t("august")}</option>
+                  <option value="9">{t("september")}</option>
+                  <option value="10">{t("october")}</option>
+                  <option value="11">{t("november")}</option>
+                  <option value="12">{t("december")}</option>
                 </Select>
               </FormGroup>
               <DateInput
@@ -126,20 +120,19 @@ export default function PassportDetailsPage() {
               <FormGroup className="usa-form-group--month usa-form-group--select">
                 <Label htmlFor="input-select">{t("month")}</Label>
                 <Select id="expirationMonthInput" name="expirationMonthInput">
-                  {/* TODO localize */}
                   <option>- Select -</option>
-                  <option value="1">01 - January</option>
-                  <option value="2">02 - February</option>
-                  <option value="3">03 - March</option>
-                  <option value="4">04 - April</option>
-                  <option value="5">05 - May</option>
-                  <option value="6">06 - June</option>
-                  <option value="7">07 - July</option>
-                  <option value="8">08 - August</option>
-                  <option value="9">09 - September</option>
-                  <option value="10">10 - October</option>
-                  <option value="11">11 - November</option>
-                  <option value="12">12 - December</option>
+                  <option value="1">{t("january")}</option>
+                  <option value="2">{t("february")}</option>
+                  <option value="3">{t("march")}</option>
+                  <option value="4">{t("april")}</option>
+                  <option value="5">{t("may")}</option>
+                  <option value="6">{t("june")}</option>
+                  <option value="7">{t("july")}</option>
+                  <option value="8">{t("august")}</option>
+                  <option value="9">{t("september")}</option>
+                  <option value="10">{t("october")}</option>
+                  <option value="11">{t("november")}</option>
+                  <option value="12">{t("december")}</option>
                 </Select>
               </FormGroup>
               <DateInput
