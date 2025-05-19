@@ -22,10 +22,16 @@ import { useTranslations } from "next-intl";
 export default function PassportDetailsPage() {
   const t = useTranslations("PassportDetails");
   type detailsFormInput = {
-    surname: string;
-    givenName: string;
-    nativeAlphabetName: string;
-    nativeAlphabetDoesNotApply: boolean;
+    "doc-type-select": string;
+    "issuer-select": string;
+    "book-number": string;
+    "no-book-number-checkbox": boolean;
+    issuanceMonthInput: string;
+    issuanceDay: string;
+    issuanceYear: string;
+    expirationMonthInput: string;
+    expirationDay: string;
+    expirationYear: string;
   };
   const formMethods = useForm<detailsFormInput>();
 
@@ -38,45 +44,45 @@ export default function PassportDetailsPage() {
       {/* // TODO move this to a separate component */}
       <Form onSubmit={formMethods.handleSubmit(onSubmit)}>
         <Fieldset legend={t("header")} legendStyle="large">
-          {/* // Should these be fieldset legends instead also? */}
-          <h3>{t("doc-type-header")}</h3>
-          <p>{t("doc-type-hint")}</p>
-          <p>
-            {t("required-fields")} (<RequiredMarker />
-            ).
-          </p>
-          {/* Passport Type */}
-          <Label htmlFor="doc-type-select" requiredMarker>
-            {t("doc-type-select-label")}
-          </Label>
-          <Select id="doc-type-select" name="doc-type-select">
-            <option value="tourist">{t("regular-passport")}</option>
-          </Select>
-          <h3>{t("issuer-header")}</h3>
-          <Label htmlFor="issuer-select" requiredMarker>
-            {t("issuer-select-label")}
-          </Label>
-          <Select id="issuer-select" name="issuer-select">
-            <option>{t("issuer-select-option")}</option>
-          </Select>
-          {/* // I wish these h3's were fieldset legends instead */}
+          <Fieldset legend={t("doc-type-header")}>
+
+            {/* // Should these be fieldset legends instead also? */}
+            <h3>{t("doc-type-header")}</h3>
+            <p>{t("doc-type-hint")}</p>
+            <p>
+              {t("required-fields")} (<RequiredMarker />
+              ).
+            </p>
+            {/* Passport Type */}
+            <Label htmlFor="doc-type-select" requiredMarker>
+              {t("doc-type-select-label")}
+            </Label>
+            <Select id="doc-type-select" name="doc-type-select">
+              <option value="tourist">{t("regular-passport")}</option>
+            </Select>
+            <h3>{t("issuer-header")}</h3>
+            <Label htmlFor="issuer-select" requiredMarker>
+              {t("issuer-select-label")}
+            </Label>
+            <Select id="issuer-select" name="issuer-select">
+              <option>{t("issuer-select-option")}</option>
+            </Select>
+          </Fieldset>
           <h3>{t("book-number-header")}</h3>
-          <p>{t("book-number-hint")}</p>
-          <Label htmlFor="book-number" requiredMarker>
-            {t("book-number-label")}
-          </Label>
-          <TextInput name="book-number" id="book-number" required />
-          <Checkbox
-            id="no-book-number-checkbox"
-            name="no-book-number-checkbox"
-            value="no-book-number"
-            label={t("no-book-number-label")}
-          />
-          {/* <h3>{t("issuance-date")}</h3> */}
-          {/* // TODO extract into date component */}
-          <Fieldset legendStyle="large">
-            <h3>{t("issuance-date")}</h3>
-            {/* // we need a medium legend style thats smaller than h1 */}
+          <fieldset legend={t("book-number-header")}>
+            <p>{t("book-number-hint")}</p>
+            <Label htmlFor="book-number" requiredMarker>
+              {t("book-number-label")}
+            </Label>
+            <TextInput name="book-number" id="book-number" required />
+            <Checkbox
+              id="no-book-number-checkbox"
+              name="no-book-number-checkbox"
+              value="no-book-number"
+              label={t("no-book-number-label")}
+            />
+          </fieldset>
+          <Fieldset legendStyle="large" legend={t("issuance-date")}>
             <DateInputGroup>
               <FormGroup className="usa-form-group--month usa-form-group--select">
                 <Label htmlFor="input-select">{t("month")}</Label>
@@ -115,8 +121,7 @@ export default function PassportDetailsPage() {
               />
             </DateInputGroup>
           </Fieldset>
-          <Fieldset>
-            <h3>{t("expiration-date")}</h3>
+          <Fieldset legend={t("expiration-date")}>
             <DateInputGroup>
               <FormGroup className="usa-form-group--month usa-form-group--select">
                 <Label htmlFor="input-select">{t("month")}</Label>
