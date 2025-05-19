@@ -41,6 +41,18 @@
     "day": "Day",
     "year": "Year",
     "expiration-date": "Expiration Date",
-    "submit": "Continue"
+    "submit": "Continue",
+    "january": "01 - January",
+    "february": "02 - February",
+    "march": "03 - March",
+    "april": "04 - April",
+    "may": "05 - May",
+    "june": "06 - June",
+    "july": "07 - July",
+    "august": "08 - August",
+    "september": "09 - September",
+    "october": "10 - October",
+    "november": "11 - November",
+    "december": "12 - December"
   }
 }
