@@ -40,6 +40,18 @@
     "year": "Año",
     "expiration-date": "Fecha de vencimiento",
     "submit": "Continuar"
+    "january": "01 - Enero",
+    "february": "02 - Febrero",
+    "march": "03 - Marzo",
+    "april": "04 - Abril",
+    "may": "05 - Mayo",
+    "june": "06 - Junio",
+    "july": "07 - Julio",
+    "august": "08 - Agosto",
+    "september": "09 - Septiembre",
+    "october": "10 - Octubre",
+    "november": "11 - Noviembre",
+    "december": "12 - Diciembre"
   },
   "AppHeader": {
     "home": "Hogar",
