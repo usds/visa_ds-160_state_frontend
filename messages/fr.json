@@ -39,7 +39,19 @@
         "day": "Jour",
         "year": "Année",
         "expiration-date": "Date d'expiration",
-        "submit": "Continuer"
+        "submit": "Continuer",
+        "january": "01 - Janvier",
+        "february": "02 - Février",
+        "march": "03 - Mars",
+        "april": "04 - Avril",
+        "may": "05 - Mai",
+        "june": "06 - Juin",
+        "july": "07 - Juillet",
+        "august": "08 - Août",
+        "september": "09 - Septembre",
+        "october": "10 - Octobre",
+        "november": "11 - Novembre",
+        "december": "12 - Décembre"
     },
     "AppHeader": {
         "home": "Accueil",
