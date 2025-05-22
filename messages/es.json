@@ -37,7 +37,7 @@
     "name1": "Nombre 1",
     "add-another-name": "+ Agregar otro nombre",
     "telecode-header": "¿Hay un clave telecode que represente su nombre?",
-    "telecode-hint": "Un telecódigo es un código de 4 dígitos que representa caracteres en algunos nombres con alfabetos no romanos",
+    "telecode-hint": "Un clave telecode es un numero de 4 dígitos que representa letras/símbolos en algunos nombres de alfabetos no romanos",
     "submit": "Siguiente"
   },
   "PassportDetails": {
