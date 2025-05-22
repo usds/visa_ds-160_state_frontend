@@ -22,6 +22,25 @@
     "home": "Home",
     "project-name": "DS-160 Nonimmigrant Visa Application"
   },
+  "Names": {
+    "alert-header": "Answers to these questions should match what is written in your passport",
+    "current-name-header": "Name on your current passport",
+    "surnames-label": "Surnames (Last Names)",
+    "surnames-hint": "Enter all surnames (last names) as listed in your passport.",
+    "given-names-label": "Given (First) Names",
+    "given-names-hint": "Enter your first names as listed in your passport.",
+    "native-alphabet-label": "Full Name in Native Alphabet",
+    "does-not-apply": "Does not apply",
+    "previous-names-header": "Previous names",
+    "previous-names-subheader": "Have you ever used any other names?",
+    "previous-names-hint": "i.e. maiden name, religious, alias, etc",
+    "yes": "yes",
+    "name1": "Name 1",
+    "add-another-name": "+ Add another name",
+    "telecode-header": "Do you have a telecode that represents your name?",
+    "telecode-hint": "A telecode is a 4 digit code that represents characters in some non-Roman alphabet names",
+    "submit": "Next"
+  },
   "PassportDetails": {
     "header": "Passport Details",
     "doc-type-header": "What type of passport or travel document do you have?",

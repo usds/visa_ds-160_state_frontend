@@ -20,6 +20,7 @@
     "unknown-error-message": "Ocurrió un error desconocido al enviar el formulario. Por favor, inténtelo de nuevo.",
     "header": "Registro de Usuario"
   },
+  "Names": {},
   "PassportDetails": {
     "header": "Detalles del Pasaporte",
     "doc-type-header": "¿Qué tipo de pasaporte o documento de viaje tiene?",

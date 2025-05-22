@@ -20,6 +20,7 @@
         "unknown-error-message": "Une erreur inconnue s'est produite lors de l'envoi du formulaire. Veuillez réessayer.",
         "header": "Enregistrement de l'utilisateur"
     },
+    "Names": {},
     "PassportDetails": {
         "header": "Détails du passeport",
         "doc-type-header": "Quel type de passeport ou de document de voyage avez-vous ?",
