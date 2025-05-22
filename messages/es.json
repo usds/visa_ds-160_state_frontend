@@ -26,7 +26,7 @@
     "surnames-label": "Apellidos",
     "surnames-hint": "Ingrese todos los apellidos tal como aparecen en su pasaporte.",
     "given-names-label": "Nombres de pila",
-    "given-names-hint": "Ingrese todos los nombres tal como aparecen en su pasaporte.",
+    "given-names-hint": "Ingrese todos los nombres de pila tal como aparecen en su pasaporte.",
     "native-alphabet-label": "Nombre completo en alfabeto nativo",
     "does-not-apply": "No aplica",
     "previous-names-header": "Nombres anteriores",
