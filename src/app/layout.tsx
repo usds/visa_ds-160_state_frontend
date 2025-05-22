@@ -4,12 +4,13 @@ import "./globals.css";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
-import { GovBanner, Grid, GridContainer } from "@trussworks/react-uswds";
+import { Grid, GridContainer } from "@trussworks/react-uswds";
 
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 
 import AppHeaderSimple from "@/components/UI/AppHeaderSimple";
+import AppBanner from "@/components/UI/Banner";
 
 export const metadata: Metadata = {
   title: "U.S. Department of State - Consular Electronic Application Center",
@@ -26,7 +27,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider>
-          <GovBanner />
+          <AppBanner aria-label="Official government website" />
           <AppHeaderSimple />
           <GridContainer className="usa-section">
             <Grid row className="margin-x-neg-205 flex-justify-center">
