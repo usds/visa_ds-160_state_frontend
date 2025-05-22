@@ -10,7 +10,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 
 import AppHeaderSimple from "@/components/UI/AppHeaderSimple";
-import AppBanner from "@/components/UI/Banner";
+import AppBanner from "@/components/UI/AppBanner";
 
 export const metadata: Metadata = {
   title: "U.S. Department of State - Consular Electronic Application Center",
