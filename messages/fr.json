@@ -20,7 +20,26 @@
         "unknown-error-message": "Une erreur inconnue s'est produite lors de l'envoi du formulaire. Veuillez réessayer.",
         "header": "Enregistrement de l'utilisateur"
     },
-    "Names": {},
+    "Names": {
+        "alert-header": "Les réponses à ces questions doivent correspondre à ce qui est écrit dans votre passeport",
+        "current-name-header": "Nom figurant sur votre passeport actuel",
+        "surnames-label": "Noms de famille",
+        "surnames-hint": "Entrez tous les noms de famille tels qu'ils figurent dans votre passeport.",
+        "given-names-label": "Prénoms",
+        "given-names-hint": "Entrez tous vos prénoms tels qu'ils figurent dans votre passeport.",
+        "native-alphabet-label": "Nom complet en alphabet natif",
+        "does-not-apply": "Ne s'applique pas",
+        "previous-names-header": "Noms précédents",
+        "previous-names-subheader": "Avez-vous déjà utilisé d'autres noms ?",
+        "previous-names-hint": "c.-à-d. nom de jeune fille, religieux, alias, etc.",
+        "yes": "oui",
+        "no": "non",
+        "name1": "Nom 1",
+        "add-another-name": "+ Ajouter un autre nom",
+        "telecode-header": "Avez-vous un télécode qui représente votre nom ?",
+        "telecode-hint": "Un télécode est un code à 4 chiffres qui représente des caractères dans certains noms en alphabet non romain",
+        "submit": "Suivant"
+    },
     "PassportDetails": {
         "header": "Détails du passeport",
         "doc-type-header": "Quel type de passeport ou de document de voyage avez-vous ?",

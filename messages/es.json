@@ -20,7 +20,26 @@
     "unknown-error-message": "Ocurrió un error desconocido al enviar el formulario. Por favor, inténtelo de nuevo.",
     "header": "Registro de Usuario"
   },
-  "Names": {},
+  "Names": {
+    "alert-header": "Las respuestas a estas preguntas deben coincidir con lo que está escrito en su pasaporte",
+    "current-name-header": "Nombre en su pasaporte actual",
+    "surnames-label": "Apellidos",
+    "surnames-hint": "Ingrese todos los apellidos tal como aparecen en su pasaporte.",
+    "given-names-label": "Nombres",
+    "given-names-hint": "Ingrese todos los nombres tal como aparecen en su pasaporte.",
+    "native-alphabet-label": "Nombre completo en alfabeto nativo",
+    "does-not-apply": "No aplica",
+    "previous-names-header": "Nombres anteriores",
+    "previous-names-subheader": "¿Ha usado algún otro nombre?",
+    "previous-names-hint": "Ej. apellido de soltera, religioso, alias, etc.",
+    "yes": "sí",
+    "no": "no",
+    "name1": "Nombre 1",
+    "add-another-name": "+ Agregar otro nombre",
+    "telecode-header": "¿Tiene un telecódigo que representa su nombre?",
+    "telecode-hint": "Un telecódigo es un código de 4 dígitos que representa caracteres en algunos nombres con alfabetos no romanos",
+    "submit": "Siguiente"
+  },
   "PassportDetails": {
     "header": "Detalles del Pasaporte",
     "doc-type-header": "¿Qué tipo de pasaporte o documento de viaje tiene?",

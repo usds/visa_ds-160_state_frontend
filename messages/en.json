@@ -35,6 +35,7 @@
     "previous-names-subheader": "Have you ever used any other names?",
     "previous-names-hint": "i.e. maiden name, religious, alias, etc",
     "yes": "yes",
+    "no": "no",
     "name1": "Name 1",
     "add-another-name": "+ Add another name",
     "telecode-header": "Do you have a telecode that represents your name?",
