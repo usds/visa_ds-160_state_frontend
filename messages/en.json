@@ -5,9 +5,11 @@
   "LocaleSwitcher": {
     "en": "English",
     "es": "Español",
-    "fr": "Français"
+    "fr": "Français",
+    "label": "Language"
   },
   "UserForm": {
+    "header": "User Registration",
     "first-name": "First Name",
     "last-name": "Last Name",
     "submit": "Submit"
