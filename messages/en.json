@@ -22,7 +22,12 @@
   },
   "AppHeader": {
     "home": "Home",
-    "project-name": "DS-160 Nonimmigrant Visa Application"
+    "project-name": "DS-160 Application",
+    "my-account": "My Account",
+    "application": "Application",
+    "profile": "Profile",
+    "logout": "Logout",
+    "resources": "Resources"
   },
   "Names": {
     "alert-header": "Answers to these questions should match what is written in your passport",
