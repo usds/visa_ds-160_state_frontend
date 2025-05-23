@@ -81,5 +81,15 @@
     "profile": "Perfil",
     "logout": "Cerrar sesión",
     "resources": "Recursos"
+  },
+  "ApplicationLayout": {
+    "getting-started": "Comenzando",
+    "travel": "Viaje",
+    "family": "Familia",
+    "work-education": "Trabajo y Educación",
+    "us-contacts": "Contactos en EE.UU.",
+    "security": "Seguridad",
+    "passport-details": "Detalles del Pasaporte",
+    "name": "Nombre"
   }
 }
