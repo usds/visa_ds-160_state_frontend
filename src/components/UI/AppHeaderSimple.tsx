@@ -10,20 +10,34 @@ import {
   NavDropDownButton,
   Menu,
 } from "@trussworks/react-uswds";
-import LocaleSwitcher from "./LocaleSwitcher";
 import { useTranslations } from "next-intl";
 
 function AppHeaderSimple() {
   const t = useTranslations("AppHeader");
 
-  const [expanded, setExpanded] = useState(false);
-  const onClick = (): void => setExpanded((prvExpanded) => !prvExpanded);
+  const [mobileNavIsExpanded, setMobileNavIsExpanded] = useState(false);
+  const onClick = (): void =>
+    setMobileNavIsExpanded((prvMobileNavIsExpanded) => !prvMobileNavIsExpanded);
 
-  const [isOpen, setIsOpen] = useState([false, false]);
+  const [menuIsOpen, setMenuIsOpen] = useState([false, false]);
   const onToggle = (idx): void => {
-    const newIsOpen = [...isOpen];
-    newIsOpen[idx] = !isOpen[idx];
-    setIsOpen(newIsOpen);
+    const newMenuIsOpen = [...menuIsOpen];
+    newMenuIsOpen[idx] = !menuIsOpen[idx];
+    setMenuIsOpen(newMenuIsOpen);
+  };
+  const handleBlur = (
+    idx: number,
+    event: React.FocusEvent<HTMLElement>,
+  ): void => {
+    const parent = event.currentTarget.parentElement;
+    if (parent && parent.contains(event.relatedTarget as Node)) {
+      // Focus is still within the shared parent (button or menu)
+      return;
+    }
+    // Close the menu
+    const newMenuIsOpen = [...menuIsOpen];
+    newMenuIsOpen[idx] = false;
+    setMenuIsOpen(newMenuIsOpen);
   };
 
   const myAccountMenuItems = [
@@ -47,14 +61,16 @@ function AppHeaderSimple() {
         onToggle={(): void => {
           onToggle(0);
         }}
+        onBlur={(event): void => handleBlur(0, event)}
         menuId="myAccountDropdown"
-        isOpen={isOpen[0]}
+        isOpen={menuIsOpen[0]}
         label={t("my-account")}
       />
       <Menu
         key="myAccount"
+        onBlur={(event): void => handleBlur(0, event)}
         items={myAccountMenuItems}
-        isOpen={isOpen[0]}
+        isOpen={menuIsOpen[0]}
         id="myAccountDropdown"
       />
     </>,
@@ -63,16 +79,18 @@ function AppHeaderSimple() {
         onToggle={(): void => {
           onToggle(1);
         }}
+        onBlur={(event): void => handleBlur(1, event)}
         menuId="myApplicationMenu"
-        isOpen={isOpen[1]}
+        isOpen={menuIsOpen[1]}
         label={t("application")}
         // TODO: state management for this
         isCurrent={true}
       />
       <Menu
         key="myApplication"
+        onBlur={(event): void => handleBlur(1, event)}
         items={myApplicationMenuItems}
-        isOpen={isOpen[1]}
+        isOpen={menuIsOpen[1]}
         id="myApplicationMenu"
       />
     </>,
@@ -91,7 +109,7 @@ function AppHeaderSimple() {
         </div>
         <PrimaryNav
           items={testItemsMenu}
-          mobileExpanded={expanded}
+          mobileExpanded={mobileNavIsExpanded}
           onToggleMobileNav={onClick}
         ></PrimaryNav>
       </div>
