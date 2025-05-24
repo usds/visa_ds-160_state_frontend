@@ -97,6 +97,7 @@ function AppHeaderSimple() {
     <Link href="#two" key="two" className="usa-nav__link">
       <span>{t("resources")}</span>
     </Link>,
+    <LocaleSwitcher key="locale"></LocaleSwitcher>,
   ];
 
   return (
