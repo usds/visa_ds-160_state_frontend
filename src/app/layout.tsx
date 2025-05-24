@@ -9,6 +9,7 @@ import { GovBanner, Grid, GridContainer } from "@trussworks/react-uswds";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 
+import Providers from "./providers";
 import AppHeaderSimple from "@/components/UI/AppHeaderSimple";
 
 export const metadata: Metadata = {
@@ -30,7 +31,9 @@ export default async function RootLayout({
           <AppHeaderSimple />
           <GridContainer className="usa-section">
             <Grid>
-              <main>{children}</main>
+              <Providers>
+                <main>{children}</main>
+              </Providers>
             </Grid>
           </GridContainer>
         </NextIntlClientProvider>
