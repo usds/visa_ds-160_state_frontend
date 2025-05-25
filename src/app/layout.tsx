@@ -9,9 +9,9 @@ import { Grid, GridContainer } from "@trussworks/react-uswds";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 
-import Providers from "./providers";
 import AppHeaderSimple from "@/components/UI/AppHeaderSimple";
 import AppBanner from "@/components/UI/AppBanner";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "U.S. Department of State - Consular Electronic Application Center",

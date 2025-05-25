@@ -14,6 +14,11 @@ import { getUsers } from "@/api/users";
 import Login from "@/app/login/login";
 
 export default async function LoginPage() {
+  console.log(
+    "login/page.tsx running on",
+    typeof window === "undefined" ? "server" : "client",
+  );
+
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
     queryKey: ["users"],
@@ -22,12 +27,7 @@ export default async function LoginPage() {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <div>
-        <h1>Login</h1>
-        <p>Welcome to the login page!</p>
-        <p>Click on a user to &quot;log in&quot;.</p>
-        <Login />
-      </div>
+      <Login />
     </HydrationBoundary>
   );
 }
