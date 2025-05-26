@@ -9,7 +9,7 @@ import {
 
 import "@/app/globals.css";
 import { getUsers } from "@/api/users";
-import Login from "@/app/login/login";
+import Login from "@/app/account/login/login";
 
 export default async function LoginPage() {
   const queryClient = new QueryClient();

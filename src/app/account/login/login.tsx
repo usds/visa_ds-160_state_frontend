@@ -8,6 +8,7 @@ import "@/app/globals.css";
 import { getUsers } from "@/api/users";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@trussworks/react-uswds";
+import Link from "next/link";
 
 export const Login = () => {
   const {
@@ -32,16 +33,11 @@ export const Login = () => {
         ) : (
           users.map((user) => (
             <li key={user.email} className="margin-bottom-1">
-              <Button
-                type="button"
-                key={user.email}
-                onClick={() => {
-                  // TODO: Add a link to the user profile page
-                  console.log(`Logging in as ${user.email}`);
-                }}
-              >
-                Log in as {user.email}
-              </Button>
+              <Link href={`/account/${user.email}/applications`}>
+                <Button type="button" key={user.email}>
+                  Log in as {user.email}
+                </Button>
+              </Link>
             </li>
           ))
         )}
