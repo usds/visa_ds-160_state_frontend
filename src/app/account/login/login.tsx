@@ -42,16 +42,11 @@ export const Login = () => {
           ))
         )}
       </ul>
-      <Button
-        type="button"
-        accentStyle="warm"
-        onClick={() => {
-          // TODO: Add a link to the user creation page
-          console.log("Create a new user");
-        }}
-      >
-        Add User
-      </Button>
+      <Link href={`/account/new-user`}>
+        <Button type="button" accentStyle="warm">
+          Add User
+        </Button>
+      </Link>
     </div>
   );
 };
