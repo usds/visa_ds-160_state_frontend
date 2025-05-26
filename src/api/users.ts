@@ -1,27 +1,19 @@
-// TODO: Query client with base URL
+// TODO: baseUrl as env variable
+const baseURL = "http://localhost:8000/api";
 
 export const getUsers = async () => {
-  console.log(
-    "getUsers called on",
-    typeof window === "undefined" ? "server" : "client",
-  );
-  try {
-    const response = await fetch("http://localhost:8000/api/users/", {
-      cache: "no-store",
-    });
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    console.error("getUsers error:", err);
-    throw err;
+  const response = await fetch(`${baseURL}/users/`, {
+    cache: "no-store",
+  });
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
+  const data = await response.json();
+  return data;
 };
 
 export const getUserByEmail = async (email: string) => {
-  const response = await fetch(`http://localhost:8000/api/users/${email}/`, {
+  const response = await fetch(`${baseURL}/users/${email}/`, {
     cache: "no-store",
   });
   if (!response.ok) {
@@ -32,7 +24,7 @@ export const getUserByEmail = async (email: string) => {
 };
 
 export const createUser = async (user: { email: string }) => {
-  const response = await fetch("http://localhost:8000/api/users/", {
+  const response = await fetch(`${baseURL}/users/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -44,14 +36,4 @@ export const createUser = async (user: { email: string }) => {
   }
   const data = await response.json();
   return data;
-};
-
-export const deleteUser = async (email: string) => {
-  const response = await fetch(`http://localhost:8000/api/users/${email}/`, {
-    method: "DELETE",
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  return response;
 };

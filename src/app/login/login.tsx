@@ -7,12 +7,9 @@ import "@/app/globals.css";
 
 import { getUsers } from "@/api/users";
 import { useQuery } from "@tanstack/react-query";
+import { Button } from "@trussworks/react-uswds";
 
 export const Login = () => {
-  console.log(
-    "login/login.tsx running on",
-    typeof window === "undefined" ? "server" : "client",
-  );
   const {
     data: users,
     isLoading,
@@ -22,24 +19,43 @@ export const Login = () => {
     queryFn: getUsers,
   });
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
   return (
     <div>
       <h1>Login</h1>
       <p>Welcome to the login page!</p>
       <p>Click on a user to &quot;log in&quot;.</p>
       <ul>
-        {users.map((user) => (
-          <li key={user.email}>{user.email}</li>
-        ))}
+        {isLoading ? (
+          <li>Loading...</li>
+        ) : error ? (
+          <li>Error: {error.message}</li>
+        ) : (
+          users.map((user) => (
+            <li key={user.email} className="margin-bottom-1">
+              <Button
+                type="button"
+                key={user.email}
+                onClick={() => {
+                  // TODO: Add a link to the user profile page
+                  console.log(`Logging in as ${user.email}`);
+                }}
+              >
+                Log in as {user.email}
+              </Button>
+            </li>
+          ))
+        )}
       </ul>
+      <Button
+        type="button"
+        accentStyle="warm"
+        onClick={() => {
+          // TODO: Add a link to the user creation page
+          console.log("Create a new user");
+        }}
+      >
+        Add User
+      </Button>
     </div>
   );
 };

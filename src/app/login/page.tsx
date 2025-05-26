@@ -1,5 +1,3 @@
-/* Placeholder login page - currently just a list of users */
-
 import React from "react";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
@@ -14,11 +12,6 @@ import { getUsers } from "@/api/users";
 import Login from "@/app/login/login";
 
 export default async function LoginPage() {
-  console.log(
-    "login/page.tsx running on",
-    typeof window === "undefined" ? "server" : "client",
-  );
-
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
     queryKey: ["users"],
