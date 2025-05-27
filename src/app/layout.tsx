@@ -30,16 +30,8 @@ export default async function RootLayout({
           <AppBanner aria-label="Official government website" />
           <AppHeaderSimple />
           <GridContainer className="usa-section">
-            <Grid row className="margin-x-neg-205 flex-justify-center">
-              <Grid
-                col={12}
-                mobileLg={{ col: 10 }}
-                tablet={{ col: 8 }}
-                desktop={{ col: 6 }}
-                className="padding-x-205 margin-bottom-4"
-              >
-                <main>{children}</main>
-              </Grid>
+            <Grid>
+              <main>{children}</main>
             </Grid>
           </GridContainer>
         </NextIntlClientProvider>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
-import "../globals.css";
+import "../../globals.css";
 import UserForm, { UserFormInput } from "@/components/UserForm/UserForm";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
