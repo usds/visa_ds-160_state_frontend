@@ -2,6 +2,7 @@
 const baseURL = "http://localhost:8000/api";
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
+  options["credentials"] = "include"; // Include cookies in the request
   const response = await fetch(url, options);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
