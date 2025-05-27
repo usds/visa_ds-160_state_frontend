@@ -1,4 +1,6 @@
 // TODO: baseUrl as env variable
+import { User } from "@/types";
+
 const baseURL = "http://localhost:8000/api";
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
@@ -9,13 +11,13 @@ async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
   return response.json();
 }
 
-export const getUsers = () =>
+export const getUsers = (): Promise<User[]> =>
   fetchJson(`${baseURL}/users/`, { cache: "no-store" });
 
-export const getUserByEmail = (email: string) =>
+export const getUserByEmail = (email: string): Promise<User> =>
   fetchJson(`${baseURL}/users/${email}/`, { cache: "no-store" });
 
-export const createUser = (user: { email: string }) =>
+export const createUser = (user: { email: string }): Promise<User> =>
   fetchJson(`${baseURL}/users/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
