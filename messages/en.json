@@ -29,6 +29,16 @@
     "logout": "Logout",
     "resources": "Resources"
   },
+  "ApplicationLayout": {
+    "getting-started": "Getting Started",
+    "travel": "Travel",
+    "family": "Family",
+    "work-education": "Work & Education",
+    "us-contacts": "U.S. Contacts",
+    "security": "Security",
+    "passport-details": "Passport Details",
+    "name": "Name"
+  },
   "Names": {
     "alert-header": "Answers to these questions should match what is written in your passport",
     "current-name-header": "Name on your current passport",

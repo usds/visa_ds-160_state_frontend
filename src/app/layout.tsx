@@ -11,6 +11,7 @@ import { getLocale } from "next-intl/server";
 
 import AppHeaderSimple from "@/components/UI/AppHeaderSimple";
 import AppBanner from "@/components/UI/AppBanner";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "U.S. Department of State - Consular Electronic Application Center",
@@ -31,7 +32,9 @@ export default async function RootLayout({
           <AppHeaderSimple />
           <GridContainer className="usa-section">
             <Grid>
-              <main>{children}</main>
+              <Providers>
+                <main>{children}</main>
+              </Providers>
             </Grid>
           </GridContainer>
         </NextIntlClientProvider>

@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import NextLink from "next/link";
 import {
   Header,
+  Link,
   NavMenuButton,
   PrimaryNav,
-  Link,
   Title,
   NavDropDownButton,
   Menu,
@@ -41,16 +42,16 @@ function AppHeaderSimple() {
   };
 
   const myAccountMenuItems = [
-    <Link href="#linkOne" key="one">
+    <Link href="#linkOne" key="profile" asCustom={NextLink}>
       {t("profile")}
     </Link>,
-    <Link href="#linkTwo" key="two">
+    <Link href="/account/login/" key="logout" asCustom={NextLink}>
       {t("logout")}
     </Link>,
   ];
 
   const myApplicationMenuItems = [
-    <Link href="#linkOne" key="one">
+    <Link href="#linkOne" key="one" asCustom={NextLink}>
       Nav??
     </Link>,
   ];
@@ -94,7 +95,7 @@ function AppHeaderSimple() {
         id="myApplicationMenu"
       />
     </>,
-    <Link href="#two" key="two" className="usa-nav__link">
+    <Link href="#two" key="two" className="usa-nav__link" asCustom={NextLink}>
       <span>{t("resources")}</span>
     </Link>,
   ];
