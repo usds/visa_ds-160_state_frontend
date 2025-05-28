@@ -15,10 +15,12 @@ import { useTranslations } from "next-intl";
 import { useMutation } from "@tanstack/react-query";
 import { logout } from "@/api/session";
 import { useRouter } from "next/navigation";
+import { useUser } from "@/providers/UserContext";
 
 function AppHeaderSimple() {
   const t = useTranslations("AppHeader");
   const router = useRouter();
+  const { user } = useUser();
 
   const [mobileNavIsExpanded, setMobileNavIsExpanded] = useState(false);
   const onClick = (): void =>
@@ -56,14 +58,20 @@ function AppHeaderSimple() {
     mutate();
   };
 
-  const myAccountMenuItems = [
-    <Link href="/account/profile" key="profile" asCustom={NextLink}>
-      {t("profile")}
-    </Link>,
-    <Link href="/account/login/" key="logout" onClick={handleLogout}>
-      {t("logout")}
-    </Link>,
-  ];
+  const myAccountMenuItems = !user
+    ? [
+        <Link href="/account/login/" key="login" asCustom={NextLink}>
+          {t("login")}
+        </Link>,
+      ]
+    : [
+        <Link href="/account/profile" key="profile" asCustom={NextLink}>
+          {t("profile")}
+        </Link>,
+        <Link href="/account/login/" key="logout" onClick={handleLogout}>
+          {t("logout")}
+        </Link>,
+      ];
 
   const myApplicationMenuItems = [
     <Link href="#linkOne" key="one" asCustom={NextLink}>
