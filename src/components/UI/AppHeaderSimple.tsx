@@ -12,9 +12,13 @@ import {
   Menu,
 } from "@trussworks/react-uswds";
 import { useTranslations } from "next-intl";
+import { useMutation } from "@tanstack/react-query";
+import { logout } from "@/api/session";
+import { useRouter } from "next/navigation";
 
 function AppHeaderSimple() {
   const t = useTranslations("AppHeader");
+  const router = useRouter();
 
   const [mobileNavIsExpanded, setMobileNavIsExpanded] = useState(false);
   const onClick = (): void =>
@@ -41,11 +45,22 @@ function AppHeaderSimple() {
     setMenuIsOpen(newMenuIsOpen);
   };
 
+  const { mutate } = useMutation({
+    mutationFn: logout,
+    onSuccess: () => {
+      // redirect to login page
+      router.push("/account/login");
+    },
+  });
+  const handleLogout = (): void => {
+    mutate();
+  };
+
   const myAccountMenuItems = [
-    <Link href="#linkOne" key="profile" asCustom={NextLink}>
+    <Link href="/account/profile" key="profile" asCustom={NextLink}>
       {t("profile")}
     </Link>,
-    <Link href="/account/login/" key="logout" asCustom={NextLink}>
+    <Link href="/account/login/" key="logout" onClick={handleLogout}>
       {t("logout")}
     </Link>,
   ];

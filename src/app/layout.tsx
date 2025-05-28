@@ -41,16 +41,16 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider>
           <AppBanner aria-label="Official government website" />
-          <AppHeaderSimple />
-          <GridContainer className="usa-section">
-            <Grid>
-              <QueryProvider dehydratedState={dehydratedState}>
-                <UserProvider>
+          <QueryProvider dehydratedState={dehydratedState}>
+            <UserProvider>
+              <AppHeaderSimple />
+              <GridContainer className="usa-section">
+                <Grid>
                   <main>{children}</main>
-                </UserProvider>
-              </QueryProvider>
-            </Grid>
-          </GridContainer>
+                </Grid>
+              </GridContainer>
+            </UserProvider>
+          </QueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>
