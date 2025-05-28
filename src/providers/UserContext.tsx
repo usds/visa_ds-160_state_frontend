@@ -29,6 +29,7 @@ export const UserProvider = ({ children }: UserProviderProps) => {
   } = useQuery<User>({
     queryKey: ["sessionuser"],
     queryFn: getUserFromSession,
+    retry: false, // Non-logged in users should not retry
   });
 
   return (

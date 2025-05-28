@@ -7,7 +7,7 @@ export const getUserFromSession = async (): Promise<User | null> => {
   try {
     return await fetchJson<User>(`${sessionUrl}/user`, { cache: "no-store" });
   } catch (error) {
-    if (error instanceof Response && error.status === 401) {
+    if (error?.status === 401) {
       // Not logged in
       return null;
     }

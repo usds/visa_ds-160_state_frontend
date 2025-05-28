@@ -26,6 +26,7 @@
     "my-account": "My Account",
     "application": "Application",
     "profile": "Profile",
+    "login": "Login",
     "logout": "Logout",
     "resources": "Resources"
   },
